@@ -1,0 +1,13 @@
+
+      <clr-datagrid>
+        <clr-dg-column [clrDgField] = "'name'">Skill</clr-dg-column>
+        <clr-dg-column [clrDgField] = "'timeEstimate'">Time(hours)</clr-dg-column>
+        <clr-dg-column [clrDgField] = "'plan'">Plan</clr-dg-column>
+    
+        <clr-dg-row *clrDgItems = "let skill of skills" [clrDgItem] = "skill">
+            <clr-dg-cell>{{skill.name}}</clr-dg-cell>
+            <clr-dg-cell>{{skill.timeEstimate}}</clr-dg-cell>
+            <clr-dg-cell>{{skill.plan}}</clr-dg-cell>
+        </clr-dg-row>
+    </clr-datagrid>>
+    

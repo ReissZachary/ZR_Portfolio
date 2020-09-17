@@ -1,0 +1,18 @@
+.name .statement {
+    text-align: center;
+}
+.resume-container{
+    text-align: center;
+}
+.resume{
+    display: inline-block;
+    margin-top: 2em;
+}
+p{
+    display: inline;
+    margin-right: 1em;
+}
+.title{
+    text-align: center;
+    text-decoration: underline;
+}

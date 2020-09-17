@@ -1,0 +1,7 @@
+<clr-datagrid>
+    <clr-dg-column [clrDgField] = "'name'">Skill</clr-dg-column>
+
+    <clr-dg-row *clrDgItems = "let skill of skills" [clrDgItem] = "skill">
+        <clr-dg-cell>{{skill.name}}</clr-dg-cell>
+    </clr-dg-row>
+</clr-datagrid>>
