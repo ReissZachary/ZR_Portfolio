@@ -1,0 +1,12 @@
+
+.resume-container{
+    text-align: center;
+}
+.resume{
+    display: inline-block;
+    margin-top: 2em;
+}
+.title{
+    text-align: center;
+    text-decoration: underline;
+}

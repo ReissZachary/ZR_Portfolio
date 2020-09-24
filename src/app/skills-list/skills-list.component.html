@@ -1,9 +1,12 @@
-<clr-datagrid>
-    <clr-dg-column [clrDgField] = "'name'">Skill</clr-dg-column>
-    <clr-dg-column [clrDgField] = "'proof'">Proof</clr-dg-column>
-
-    <clr-dg-row *clrDgItems = "let skill of skills" [clrDgItem] = "skill">
-        <clr-dg-cell>{{skill.name}}</clr-dg-cell>
-        <clr-dg-cell>{{skill.proof}}</clr-dg-cell>
-    </clr-dg-row>
-</clr-datagrid>>
+<div class="to-get-skill-container">
+    <h2 class="title">My Skills</h2>
+    <clr-datagrid>
+        <clr-dg-column [clrDgField] = "'name'">Skill</clr-dg-column>
+        <clr-dg-column [clrDgField] = "'proof'">Proof</clr-dg-column>
+    
+        <clr-dg-row *clrDgItems = "let skill of skills" [clrDgItem] = "skill">
+            <clr-dg-cell>{{skill.name}}</clr-dg-cell>
+            <clr-dg-cell>{{skill.proof}}</clr-dg-cell>
+        </clr-dg-row>
+    </clr-datagrid>>
+</div>

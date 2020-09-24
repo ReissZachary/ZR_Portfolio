@@ -3,32 +3,27 @@
 }
 .name {
     font-size: 2.25em;
+    color: white;
     font-weight: 700;
 }
 .statement{
     margin-top: 0;
     font: 1.5em;
-}
-.resume-container{
-    text-align: center;
-}
-.resume{
-    display: inline-block;
-    margin-top: 2em;
+    color: white;
 }
 p{
     display: inline;
     margin-right: 1em;
+    color: #335171;
 }
-.title{
-    text-align: center;
-    text-decoration: underline;
+a{
+    color: white;
 }
 .main-banner{
     text-align: center;
     padding-top: .5em;
     padding-bottom: 1em;
-    background-color: #bde3ff;
+    background-color: #4d97f1;
 }
 .contact-container{
     margin-top: 2em;
@@ -39,4 +34,5 @@ hr {
     max-width: 250px;
     border: 0;
     border-top: solid 4px;
+    color: white;
 }

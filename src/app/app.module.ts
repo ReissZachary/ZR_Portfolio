@@ -10,6 +10,7 @@ import { SkillsListComponent } from './skills-list/skills-list.component';
 import { ClarityModule } from '@clr/angular';
 import { ToGetSkillsListComponent } from './to-get-skills-list/to-get-skills-list.component';
 import { NotSkillsListUnprioritizedComponent } from './not-skills-list-unprioritized/not-skills-list-unprioritized.component';
+import { ResumeComponent } from './resume/resume.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { NotSkillsListUnprioritizedComponent } from './not-skills-list-unpriorit
     SkillsListComponent,
     ToGetSkillsListComponent,
     NotSkillsListUnprioritizedComponent,
+    ResumeComponent,
   ],
   imports: [
     BrowserModule,
