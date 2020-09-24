@@ -1,6 +1,14 @@
 .name .statement {
     text-align: center;
 }
+.name {
+    font-size: 2.25em;
+    font-weight: 700;
+}
+.statement{
+    margin-top: 0;
+    font: 1.5em;
+}
 .resume-container{
     text-align: center;
 }
@@ -15,4 +23,20 @@ p{
 .title{
     text-align: center;
     text-decoration: underline;
+}
+.main-banner{
+    text-align: center;
+    padding-top: .5em;
+    padding-bottom: 1em;
+    background-color: #bde3ff;
+}
+.contact-container{
+    margin-top: 2em;
+}
+hr {
+    margin: 15px auto 25px;
+    padding: 0;
+    max-width: 250px;
+    border: 0;
+    border-top: solid 4px;
 }
