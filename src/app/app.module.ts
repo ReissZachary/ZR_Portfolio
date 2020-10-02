@@ -11,7 +11,9 @@ import { ClarityModule } from '@clr/angular';
 import { ToGetSkillsListComponent } from './to-get-skills-list/to-get-skills-list.component';
 import { NotSkillsListUnprioritizedComponent } from './not-skills-list-unprioritized/not-skills-list-unprioritized.component';
 import { ResumeComponent } from './resume/resume.component';
-import { StickyNavModule } from 'ng2-sticky-nav';
+import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
+import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
+import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,9 @@ import { StickyNavModule } from 'ng2-sticky-nav';
     ToGetSkillsListComponent,
     NotSkillsListUnprioritizedComponent,
     ResumeComponent,
+    BlogPostManagerComponent,
+    BlogPostNgRoutingComponent,
+    BlogPostSipitComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,6 @@ import { StickyNavModule } from 'ng2-sticky-nav';
     BrowserAnimationsModule,
     RouterModule,
     ClarityModule,
-    StickyNavModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

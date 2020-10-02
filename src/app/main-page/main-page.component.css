@@ -21,7 +21,7 @@
 p{
     display: inline;
     margin-right: 1em;
-    color: #5b9bbc;
+    color: White;
     vertical-align: middle;
 }
 a{
@@ -36,10 +36,9 @@ a:hover{
 .main-banner{
     left: 0px;
     top: 0px;
-    overflow: hidden;
     margin: 0px;
     padding: 0px;
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     position: relative;
     background-color: #0d2c5a;
@@ -49,11 +48,11 @@ a:hover{
 }
 .main-banner-info{
     margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
 }
 .contact-container{
     vertical-align: middle;

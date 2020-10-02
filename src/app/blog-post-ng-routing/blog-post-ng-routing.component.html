@@ -1,0 +1,53 @@
+<div class="container">
+    <h1>Angular Routing</h1>
+    <hr>
+    <div class="intro">
+        <p class="intro">
+            Angular routing is a core part of the Angular platform. Angular routing can be installed from 
+            the @angular/router package. There are many reasons why you would want to incorporate routing to you application:
+        </p>
+        <br>
+        <ul>
+            <li>Enables responsive Single Page Applications (SPAs)</li>
+            <li>Gives easy access to route parameters</li>
+            <li>Easily interprets a browser URL as an instruction to change the view</li>
+        </ul>
+        <p>
+            Awesome, for these reasons I wanted to incorporate Angular routing into my Angular apps. Here is how I did it!
+        </p>
+        <br>
+    </div>
+
+    <div class="router-outlet">
+        <h3>The Router Outlet</h3>
+        <p>
+            Ok, the router outlet is pretty cool. Basically it is where the router will place a component that matches the browswers URL. <br> You can even have multiple router outlets in 
+            the application for more advanced routing techinques. <br>
+
+            Here is how I used mine: <br>
+        </p>
+        <img src="../../assets/ng-routing-blog-photos/router-outlet.png" alt="code block showing router outlet">
+        <p>
+            This block of code is located in my app.component.html. 
+            I am using it here because this allows my to have a universal navbar (the one you see at the top of this page :) ) throughout my entire app. <br>
+            So based on my URL, a view will be shown making it seem like another page is being loaded when in reality it is simply hiding one view and showing another!
+
+        </p>
+    </div>
+    <div class="routes-paths">
+        <h3>Routes and Paths</h3>
+        <p>
+            The difined routes and paths are pretty important. They are basially what allow a URL to be mapped to a component. <br>
+            Routes are actually objects that have a PATH property and a COMPONENT property. The PATH represents the URL to be mapped to a unique view(component), and <br>
+            the COMPONENT is the Angular component that you want associated with that path. <br>
+            Routes are defined in the app.routing.module.ts file. Here are my routes for this application: <br><br>
+        </p>
+        <img src="../../assets/ng-routing-blog-photos/routes-paths.png" alt="code block showing routes and paths">
+        <p>
+            Here there is an array or routes, and inside this array I have declared my route objects. <br>
+            The first route I have is for my home page. The empty path is default for the main page. This URL is mapped to my MainPageComponent! <br>
+            So whenever you hit this URL the MainPageComponent is shown. Likewise for my ng-routing-blog-post path which is mapped to this page! <br><br>
+            Pretty cool if I do say so myself!
+        </p>
+    </div>
+</div>
