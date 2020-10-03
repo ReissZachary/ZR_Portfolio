@@ -1,4 +1,90 @@
 <div class="container">
     <h1>Sipit Soda Shack</h1>
     <hr>
+    <div class="sipit-logo">
+        <img style="width: 500px;" src="../../assets/Sipit-blog-photos/SipitLogo.png" alt="Sip it logo">
+    </div>
+    <div class="tldr">
+        <h3 id="heading">TL;DR</h3>
+        <p><span>What:</span> A moblic app for a local soda shop</p>
+        <p><span>Why:</span> To help handle the sometimes large amounts of traffic, and make ordered easier for the customers</p>
+        <p><span>How:</span> Built application front-end using Xamrain Forms and C#/.NET Core for API backend (which this blog will focus on)</p>
+    </div>
+    <h3 id="summary">Summary</h3>
+    <div class="summary-info">
+        <p>
+            Sip It is a soda shop located in the town where I live. It is locally owned, and is very sucessfull. 
+            No matter the time of day, I feel like the line is always long to get your favorite mixed soda. 
+            I approached the ownder and asked if I could make an app for him that would have some basic functionality 
+            such as ordering, accounts, database, notifications, etc. 
+        </p>
+        <h4>Architecture</h4>
+        <p>
+            I wanted to use microservices. There were a few reasons why I chose microservices:
+        </p>
+        <ul>
+            <li>Increased isolation and resiliency</li>
+            <li>Increased scalability (add, delete, update microservices)</li>
+            <li>Integrates well with ASP.NET Core</li>
+            <li>Wanted to learn something new :)</li>
+        </ul>
+        <p>Here is a high level diagram of my applicaton architecture</p> <br>
+        <div class="architecture">
+            <img src="../../assets/Sipit-blog-photos/sipit-architecture.png" alt="architecture">
+        </div>
+        <p>
+            The reason for this type of architecture is so not expose all microservices but to only
+            expose my API gateway which inturn communicates with my microservices. This is, in some way, similar to the facade pattern. <br>
+            Lets dive into some of the code!
+        </p>
+    </div>
+    <h4>Applicatoin Flow and Code</h4>
+    <div class="code-flow">
+        <p>Lets run through a simple scenario a customer would be in!</p>
+        <p>
+            <span id="scenario">As a user, I want to log into the app, navigate to the menu, and see all the menu item Sip It has to offer.</span>
+        </p>
+        <p>
+            What will happen here is once the user navigates to the menu page
+            an GET request will be sent to the API Gateway for all the menu items.
+            Then the API gateway redirects that request to the Menu Service which then handles the request 
+            returning the menu items via json. This is what the front-end will consume. <br>
+        </p>
+        <p>Lets look at some code that is ran in this scenario</p>
+        <br>
+        <p>When the intial request comes in it hits the gateway menu controller which looks like this:</p>
+        <img src="../../assets/Sipit-blog-photos/apigateway-menu-controller.png" alt="apigateway menu controller">
+        <br><br>
+        <p>
+            Using basic REST functions I handle the incoming request by simply redirecting to an async call in the menu service called "GetAllDrinksAsync."
+        </p>
+        <br><br>
+        <p>This puts us into the actual menu service which looks like this:</p>
+        <img src="../../assets/Sipit-blog-photos/menu-controller.png" alt="menu controller">
+        <p>Here is where we access the database (or file in this case).</p>
+        <br>
+        <h4>Remarks</h4>
+        <div class="notes">
+            <p>I feel it important to mention a few points:</p>
+            <ul>
+                <li>
+                    Microservices work really well for large code bases(check out <a href="https://www.jp-institute-of-software.com/439889679">Netflixs architecture!</a>). This project was a great environment for me to learn how microservices work because it is on a smaller scale.
+                </li>
+                <li>
+                    I mentioned before some of the other tech stacks used in this project but I wanted this blog post to show my use of microservice, C#, and REST Api's. Here are other tech stack examples:
+                    <ul>
+                        <li>
+                            <a href="sipit-docker-blog-post">Sip It and Docker</a>
+                        </li>
+                        <li>
+                            <a href="sipit-xamarin-blog-post">Sip It Xamrain App</a>
+                        </li>
+                    </ul> 
+                </li>
+                <li>
+                    Here is a video demo-ing the app in use: <a href="https://www.youtube.com/watch?v=1Lba2sjVRVE&t=1s">Sip It Demo</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>

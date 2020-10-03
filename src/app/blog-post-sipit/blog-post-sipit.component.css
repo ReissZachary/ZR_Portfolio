@@ -1,0 +1,32 @@
+.sipit-logo{    
+    text-align: center;
+}
+.container{
+    margin: 2em;
+}
+.tldr{
+    text-align: center;
+}
+#heading{
+    text-decoration: underline;
+}
+span{
+    text-decoration: underline;
+    font-weight: bold;
+}
+#summary{
+    text-align: center;
+    text-decoration: underline;
+}
+.architecture{
+    width: 200px;
+}
+#scenario{
+    text-decoration: wavy;
+    background-color: #E0E0E0;
+    padding: .5em;
+    margin-left: 2em;
+}
+h4{
+    font-weight: bold;
+}
