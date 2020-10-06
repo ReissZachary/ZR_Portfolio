@@ -14,6 +14,7 @@ import { ResumeComponent } from './resume/resume.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
 import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
 import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.component';
+import { BlogPostTinkerjemApiComponent } from './blog-post-tinkerjem-api/blog-post-tinkerjem-api.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.compon
     BlogPostManagerComponent,
     BlogPostNgRoutingComponent,
     BlogPostSipitComponent,
+    BlogPostTinkerjemApiComponent,
   ],
   imports: [
     BrowserModule,

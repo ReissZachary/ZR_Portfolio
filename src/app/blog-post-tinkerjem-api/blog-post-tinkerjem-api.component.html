@@ -1,0 +1,77 @@
+<div class="container">
+    <h1>Tinker Gems Jewelry</h1>
+    <hr>
+    <div class="logo">
+        <img width="500px" src="../../assets/tinkerjems-blog-photos/tinkerJemsLogo.png" alt="TinkerJems Logo">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> A website for sisters jewelry company</p>
+        <p><span>Why:</span> To help ease process of receiving and filling orders and to get her company name out there</p>
+        <p><span>How:</span> Built with .NET Core Razor pages, HTML, CSS, and takes advantage of REST API endpoints</p>
+    </div>
+    <h3 id="heading">Summary</h3>
+    <div class="summary-info">
+        <p>
+            Tinker Jems Jewelry is a small local jewelry shop owned by my sister. She makes many different types of jewelry and sells them as a hobby. As of recent, she has been receiving more and more requests for her jewelry.
+            This led my sister t0 approach me with an idea to help her small local business grow and to help facilitate the process of ordering and recieving her handmade jewelry.
+            She asked if I could make a website that could still encapsulate her 'local' feel and keep the customer and owner relationship strong. She wanted something simple, yet complete. 
+            She wanted to keep the communication between her and the customer as much as she could. While there are multiple components in her webpage, I want to dicuss the use of the API's.
+        </p>
+    </div>
+    <h3 id="heading">Data Model</h3>
+    <div class="data">
+        <p>
+            To be able to interact with the API I needed to have some data to interact with. While there are a few different models in this application, the most commonly used is the JewelryItem model. JewelryItem is shaped as follows: <br><br>
+        </p>
+        <img style="width: 450px;" src="../../assets/tinkerjems-blog-photos/data-model-jewelry-item.png" alt="Data model Jewelry Item">
+        <p>
+            As you can see, a JewelryItem has some basic properties such as an Id, Name, Price, Material, and Category. <span class="important">The reason why</span> I shaped the ojbect this way is because it would allow me to use these properties in the API. For example: Getting jewelry items by material or category.
+        </p>
+    </div>
+    <h3 id="heading">The API</h3>
+    <div class="API">
+        <p>
+            I had two choices to make regarding API's. I was choosing between <span class="important">RESTful</span> and <span class="important">SOAP</span> API's.
+            I ended up choosing REST. There were a few main reasons I went down the RESTful path:
+        </p>            
+        <ul>
+            <li>I was aware that SOAP uses XML and REST uses JSON. From what I know, I can have a greater variety of data formats with JSON. Hence, making it easier to work with for me</li>
+            <li>JSON has better support for browser clients. After all, it is highly used by Yahoo, ebay, Amazon, and even Google</li>
+            <li>REST has superior performance especially when it comes to caching for information.</li>
+        </ul>
+        <p>
+            With a RESTful API I had the basic CRUD operations like Post, Get, and Delete. Here is an example of my API endpoint that gets a jewelry item by it's id and the JSON object that is returned by this query:
+        </p>
+        <div class="code-snippets">
+            <div class="endpoint">
+                <h4>ENDPOINT</h4>
+                <img style="width: 500px;" src="../../assets/tinkerjems-blog-photos/get-jewelry-item-id.png" alt="Get Jewelry Item by Id code snippet">
+            </div>
+            <div class="response">
+                <h4>RESPONSE</h4>
+                <img style="width: 1000px;" src="../../assets/tinkerjems-blog-photos/get-item-json-results.png" alt="JSON result of query"></div>
+        </div>
+        <p>
+            Along with this endpoint there are others that do similar CRUD tasks. With an API that has these endpoints I can easily get items based off of id, material, category, or similar tags. <br><br>
+            This type of architechture works out nicely because with this API I can eventually expand the application to mobile, desktop and other devices if I wanted.
+            In fact, I have developed a <span class="important">WPF</span> app the moves this site to a desktop application. 
+        </p>
+    </div>
+    <h3 id="heading">Final Remarks</h3>
+    <div class="remarks">
+        <p>
+            <Span>CURRENT STATUS:</Span> This website is up and running on Heroku <a href="https://tinker-jems.herokuapp.com/">here</a>. 
+            She is still in the process of adding all her jewelry items to the page and I am still working on implementing some sort of checkout process.
+            Due to the recent COVID-19 pandemic, things have been halted for the time being. 
+        </p>
+        <p>
+            Some other really cool features of this site include:
+        </p>
+        <ul>
+            <li>Has admin role so that my sister can log in and add/update/remove jewelry items along with any pictures or tags</li>
+            <li>There is blog capabilities for my sister to create posts about current jewelry deal/inspirations/stories.</li>
+            <li>Each jewelry item can have many tags. Each tag can be associated with many different jewelry items. This allows users to click on tags to get a page with all the items with similar tags!</li>
+        </ul>        
+    </div>
+</div>
