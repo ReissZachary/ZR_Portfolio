@@ -9,3 +9,36 @@
 .nav-link{
   text-decoration: none;
 }
+.logo{
+  text-align: center;
+}
+.container{
+  margin: 2em;
+}
+.tldr{
+  text-align: center;
+}
+#heading{
+  text-decoration: underline;
+  text-align: center;
+}
+span{
+  text-decoration: underline;
+  font-weight: bold;
+}
+.important{
+  font-weight: bold;
+}
+ul{
+  margin-left: 2em;
+}
+.code-snippets{
+  display: flex;
+  text-align: center;
+}
+h4{
+  text-decoration: underline;
+}
+.code-snippet-heading{
+  text-align: center;
+}

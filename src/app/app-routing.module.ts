@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
 import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
 import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.component';
+import { BlogPostSqlJoinsComponent } from './blog-post-sql-joins/blog-post-sql-joins.component';
 import { BlogPostTinkerjemApiComponent } from './blog-post-tinkerjem-api/blog-post-tinkerjem-api.component';
 import { MainPageComponent } from './main-page/main-page.component';
 import { ResumeComponent } from './resume/resume.component';
@@ -41,6 +42,9 @@ const routes: Routes = [
   {
     path: 'tinkerjems-api-blog-post',
     component: BlogPostTinkerjemApiComponent
+  },{
+    path: 'sql-joins-blog-post',
+    component: BlogPostSqlJoinsComponent
   },
 ];
 

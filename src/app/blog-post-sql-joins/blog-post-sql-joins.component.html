@@ -1,0 +1,121 @@
+<div class="container">
+    <h1>SQL Joins - The ins and outs</h1>
+    <hr>
+    <div class="logo">
+        <img width="500px" src="../../assets/sql-joins-blog-photos/sql-joins-venn.jpg" alt="Sql joins venn diagram">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> Comparison of different sql joins and how to ge their results to satisfy your wants</p>
+        <p><span>Why:</span> To grasp how using different joins can get you the desired results</p>
+        <p>
+            <span>How:</span> Using Microsofts <a href="https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-ver15&tabs=ssms">Adventure Works Database</a>
+            Show how using different joins can yeild different results
+        </p>
+    </div>
+    <h3 id="heading">Adventure Works Database</h3>
+    <div class="adventure-works">
+        <p>
+            A long time ago, in a not so far away galaxy, Microsoft created a fictional multinational manufacturing database for a fictional company called Adventure Works.
+            This database include over 20,000 customer, 70,000 orders, and 500 different products. It was designed for developers like me and you to hone in on 
+            our SQL skills and use it however we may like. I, personally, like using it for sandbox learning activities like this one!
+        </p>
+    </div>
+    <h3 id="heading">The Different Joins</h3>
+    <div class="summary-info">
+        <p style="text-align: center;">
+            Isn't that a wonderful compilation of Venn Diagrams visualizing what is going on with the different joins? Well, lets start off showing each on off with a real example!
+        </p>
+        <div class="inner-join">            
+            <h4>INNER JOIN</h4>
+            <p>
+                Inner joins, in my opinion, are the most commonly used join. From the diagram above, an inner join basically is saying 
+                <span>Give me everything that table A and table B have in common. Everything else; we don't care about!</span>           
+            </p>
+            <div class="code-example">
+                <h5>EXAMPLE</h5>
+                <p>
+                    Lets say, at our company, we want to find out which employee has a company credit card assigned to them and get the ID of that credit card. Let's see how it is done!
+                </p>
+                <div class="code-snippets">
+                    <div class="code-snippet-heading">
+                        <h4>SQL QUERY</h4>
+                        <img src="../../assets/sql-joins-blog-photos/inner-join-query.png" alt="SQL query">
+                    </div>
+                    <div class="code-snippet-heading">
+                        <h4>QUERY RESULTS</h4>
+                        <img style="margin-left: 3em;" src="../../assets/sql-joins-blog-photos/inner-join-result.png" alt="Query results">
+                    </div>                    
+                </div>
+                <p>
+                    From the results, we get all of the employees (over 19,000 rows!) who have a credit card and show the card ID. We are basically saying
+                     "whichever employee and credit card HAVE THE SAME buisiness entity ID give me their name and card ID"
+                </p>
+            </div>
+        </div>
+        <div class="left-join">
+            <h4>LEFT JOIN</h4>
+            <p>
+                <span>
+                    Left (and right) joins are useful for returning all the values from the left table, plus 
+                    matched values from the right table or NULL in case of no matching join.
+                </span> 
+                To continue with the employee credit cards example here is what a left join would look like
+            </p>
+            <div class="code-example">
+                <h5>EXAMPLE</h5>
+                <p>
+                    This will show all the the employees with their credit cards PLUS the employees who don't have credit cards assigned
+                </p>
+                <div class="code-snippets">
+                    <div class="code-snippet-heading">
+                        <h4>SQL QUERY</h4>
+                        <img src="../../assets/sql-joins-blog-photos/left-join-query.png" alt="SQL query">
+                    </div>
+                    <div class="code-snippet-heading">
+                        <h4>QUERY RESULTS</h4>
+                        <img style="margin-left: 3em;" src="../../assets/sql-joins-blog-photos/left-join-result.png" alt="SQL query">
+                    </div>
+                </div>
+                <p>
+                    Notice how there are NULL values. This is becuase the left joing in including all the employees who don't have a credit card assigned to them. 
+                    This query results in 20,000 rows which is more than the inner join returned for that reason. <br><br>
+                    But what if we want to only return the employees who <span>DON'T</span> have a credit card?? 
+                    Don't fret, it's a simple change to our code. We would only need to change our "ON" clause to accept NULL values as follows:
+                    <img src="../../assets/sql-joins-blog-photos/left-join-query-null.png" alt="SQL query">
+                </p>
+            </div>
+        </div>
+        <div class="full-outer">
+            <h4>FULL OUTER JOIN</h4>
+            <p>
+                Last but definetly not least the full-outer joins. Outer joins solve problems like 
+                <span> what if I want all the rows from tableA AND tableB, and what if I want to exclude the rows where tableA and tableB are the same? </span>
+                It is important to note that full outer joins have the potential to return very larg data sets!! Let's see the full outer join in action.
+            </p>
+            <div class="code-example">
+                <h5>EXAMPLE</h5>
+                <p>
+                    Lets say, continuing with the employee credit cards, we only want to see which employees <span>DO NOT</span> have any credit card(s)
+                    assigned to them.
+                </p>
+                <div class="code-snippets">
+                    <div class="code-snippet-heading">
+                        <h4>SQL QUERY</h4>
+                        <img src="../../assets/sql-joins-blog-photos/outer-join-query.png" alt="SQL query">
+                    </div>
+                    <div class="code-snippet-heading">
+                        <h4>QUERY RESULTS</h4>
+                        <img style="margin-left: 3em;" src="../../assets/sql-joins-blog-photos/outer-join-result.png" alt="SQL query">
+                    </div>
+                </div>
+                <p>
+                    This query only resulted in 854 rows which is surprising. That means that out of all employees there are only 854 of them who don't have a company credit card!
+                    Another use of outer joins could be to return all the rows from Employees and CreditCards regardless if there is a link between the two. 
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
