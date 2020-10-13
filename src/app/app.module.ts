@@ -16,6 +16,7 @@ import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-
 import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.component';
 import { BlogPostTinkerjemApiComponent } from './blog-post-tinkerjem-api/blog-post-tinkerjem-api.component';
 import { BlogPostSqlJoinsComponent } from './blog-post-sql-joins/blog-post-sql-joins.component';
+import { BlogPostTddComponent } from './blog-post-tdd/blog-post-tdd.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { BlogPostSqlJoinsComponent } from './blog-post-sql-joins/blog-post-sql-j
     BlogPostSipitComponent,
     BlogPostTinkerjemApiComponent,
     BlogPostSqlJoinsComponent,
+    BlogPostTddComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,110 @@
+<div class="container">
+    <h1>Test Driven Development</h1>
+    <hr>
+    <div class="logo">
+        <img width="500px" src="../../assets/tdd-blog-photos/test-driven-development-TDD.png" alt="TDD cycle">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> Solve a coding challenge using TDD</p>
+        <p><span>Why:</span> Demonstrate how TDD can lead to cleaner code</p>
+        <p>
+            <span>How:</span> Solve Project Euler <a href="https://projecteuler.net/problem=145">challenge #145</a>
+            using good practices of TDD
+        </p>
+    </div>
+    <h3 id="heading">The Challenge</h3>
+    <div class="the-challenge">
+        <p>
+            Some positive integers n have the property that the sum [ n + reverse(n) ] consists entirely of odd (decimal) digits. <br>
+            For instance, 36 + 63 = 99 and 409 + 904 = 1313. We will call such numbers reversible;
+            so 36, 63, 409, and 904 are reversible. Leading zeroes are not allowed in either n or reverse(n). <br>
+            There are 120 reversible numbers below one-thousand. <br>
+            How many reversible numbers are there below one-billion (109)?
+        </p>
+    </div>
+    <h3 id="heading">Test Driven Development</h3>
+    <div class="tdd">
+        TDD has many benefits. I have chose to follow TDD as close as possible because I have found that it makes code more enjoyable, lays out requirements clearly,
+        creates a sort of contract for me to meet, allows me to gauge my work better. Some other benefits of TDD include:
+        <ul>
+            <li>TDD fits right in with Agile customer-focused teams because the requirements become the tests</li>
+            <li>Speeds up delivery becuase feedback is received promptly</li>
+            <li>Encourages developers to create small modularized methods. Keeping code clean and precise</li>
+            <li>Tests can be run automatically within a few seconds. </li>
+            <li>Gives developers a sense of confidence by completing small tasks throughout the work day</li>
+        </ul>
+        All in all, TDD is very much worth it. It may take you a little bit longer to write the tests, but it will save you that much more (plus some) in the end! GO TDD!!
+    </div>
+    <h3 id="heading">Solve It!</h3>
+    <div class="summary-info">         
+        <p>
+            Before I even began writing code, I separated the requirements of this challenge. I came up with three different one:
+        </p>
+            <ul>
+                <li>I need to be able to flip numbers</li>
+                <li>I need to be able to add the flipped number with the original</li>
+                <li>And finally, I need to determine if each digit in added result is odd</li>
+            </ul>
+        <p>
+            Following the TDD cycle, I started off with writing a failing test. My first test looked something like this:
+        </p>
+        <img src="../../assets/tdd-blog-photos/flip-number-test.png" alt="">
+        <hr>
+        <h4>Test Cases</h4>
+        I am a big fan of using TestCases as part of my tests. I had a other options like writing two separate tests that tested different numbers.
+        However, I chose to use test cases because it significantly reduces the amount of code that needed writing, and it tells a good story just by reading it.
+        For example, with the code above, with just 4 lines of code, I am able to have 4 different tests. This makes testing for edge cases a lot easier.
+        <hr>
+        <p>
+            Now that this test is written we can see that it is failing...which is what we expected!
+        </p>
+        <img src="../../assets/tdd-blog-photos/flip-number-fail.png" alt="">
+        <p>
+            Great! Now that we have a failing test, we can make the test pass. Now, this blog is not about solving the problem,
+            but more about the process of TDD <br> <br>
+
+            Once I wrote some code to test we can run the tests again to see if they pass...
+        </p>
+        <img src="../../assets/tdd-blog-photos/flip-number-pass.png" alt="">
+        <p>
+            Ah, don't you just love seeing those green checks? That means it passed! Here is the code that made them pass.
+        </p>
+        <img src="../../assets/tdd-blog-photos/flip-number-code.png" alt="">
+        <p>
+            The next steps would be to refactor the code. In my case, I went and added some edge cases to my tests and made a few comments to my code
+            to make it easier to follow. This could also be a perfect time to optimize and make code more efficient.
+            Then you start the cycle over by writing another failing test!
+        </p>
+
+        <p>
+            This process is simple and worth following. In my honest opinion it makes coding feel more productive and straight forward.
+            I continued this process and eventually landed at the answer. Here are some code snippets of my journey.
+        </p>
+        <div class="cycle">
+            <h5>Test to add flipped number with original number</h5>
+            <div class="photos">
+                <img src="../../assets/tdd-blog-photos/add-number-test.png" alt="">
+                <img style="margin-left: 1em;" src="../../assets/tdd-blog-photos/add-number-fail.png" alt="">
+                <img src="../../assets/tdd-blog-photos/add-number-pass.png" alt="">
+            </div>
+            <h5>Test to determine if each digit is odd</h5>
+            <div class="photos">
+                <img src="../../assets/tdd-blog-photos/are-odd-test.png" alt="">
+                <img style="margin-left: 1em;" src="../../assets/tdd-blog-photos/are-odd-fail.png" alt="">
+                <img src="../../assets/tdd-blog-photos/are-odd-pass.png" alt="">
+            </div>
+        </div>
+    </div>
+    <h3 id="heading">Final Result</h3>
+    <img src="../../assets/tdd-blog-photos/tests-pass.png" alt="">
+    <p>
+        And just like that you have all passing tests, and working code! For those of you who have made it this far,
+        the correct answer to this challenge is <span class="answer">608720</span> :)
+    </p>
+    <div class="final-pass">
+        <img src="../../assets/tdd-blog-photos/answer.png" alt="">
+    </div>
+</div>
+
+
