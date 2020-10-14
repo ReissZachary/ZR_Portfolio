@@ -1,0 +1,60 @@
+<div class="container">
+    <h1>Database Organization - ERDs</h1>
+    <hr>
+    <div class="logo">
+        <img style="width: 500px;" src="../../assets/db-organization-photos/gears.jpg" alt="gears">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> Demonstrate simple relationship diagrams for databases I created</p>
+        <p><span>Why:</span> Show how diagrams can help visualize how data will be stored</p>
+        <p><span>How:</span> Using Draw.io to create high level ERD's</p>
+    </div>
+
+    <h3 id="heading">Why ERDs?</h3>
+    <div class="why-erd">
+        <p>
+            ERD stands for Entity Relationship Diagram and I am a big fan of using them anytime I am beginning a new project that utilizes a database.
+            ERDs are basically a snapshot of the entities(tables/objects) in your database and how they are related to other tables/objects.
+            There are different types of ERDs. What you will be seeing in this demo are more conceptual diagrams. The reason I am more keen to conceptual
+            diagrams is because I feel like they are high level enough for customers/product owners to understand, yet a developer can easily translate them 
+            into actual tables/objects. <br><br>
+            ERDs, in my opinion, should be some of the first things you create when planning for you database. Why? Because they explicitly depict how the 
+            database can and will be organized. Showing different relationships will make setup go loads quicker. 
+        </p>
+    </div>
+
+    <h3 id="heading">My ERDs</h3>
+    <div class="erds">
+        <p>
+            Below you will see depictions on two different databases that I created. They are simple, but help get my point across that ERDs really are helpful
+            in visualizing your data. <br>
+            I will be focusing on my <a href="tinkerjems-api-blog-post">TinkerGems</a> database then I will show a design related to my work at micron. 
+        </p>
+        <div class="tinkergems-db">
+            <h4>Tinker Gems ERD</h4>
+            <img style="width: 900px;" src="../../assets/db-organization-photos/tinkergems-erd.png" alt="">
+        </div>
+        See? Just by looking at this diagram there is a deeper understanding of the data that will be stored in the database. There really isn't a need for further desciption.
+        Just from a quick glace, you can see that there are object such as a jewelry item, a tag, and a blog post. It is clearly shown that there is a relationship between
+        a jewelry item and a tag. This is why ERDs are so crucial to having a good, organized database.
+
+        <div class="tinkergems-db">
+            <h4>Monitoring Applicaiton ERD</h4>
+            <img style="width: 900px;" src="../../assets/db-organization-photos/micron-erd.png" alt="">
+        </div>
+        This diagram is showing how I organized an application that monitors curcial jobs by using database connections to execute queries and interpret the value that is returned.
+        I wont go into details about the functions of the application because this blog focuses on my ERD. Just as before, the entities are clearly exposed, the relationships are seen 
+        and can be easily translated, and the properties of each object are organized and precise. The "M" and "N" in both of these diagrams represent a many to many relationship. 
+        e.g. MetricQuery can have many different Connections and a Connection can have many different MetricQuerys that are referring to it.
+    </div>
+    
+    <h3 id="heading">Final Remarks</h3>
+    Getting in the habit of making ERDs before jumping into table creation and adding rows, has really helped me in the long run.
+    Taking the time to visualize how I want my data to be stored, what types of properties my entities will have, what type of relationships do I 
+    want these entities to have will greatly reduce the amount of rework and coding that will need to be done. Not only that, but it will help ensure
+    that your database follows relational patterns.     
+</div>
+
+
+

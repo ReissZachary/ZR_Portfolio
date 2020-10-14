@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BlogPostDbOrganizationComponent } from './blog-post-db-organization/blog-post-db-organization.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
 import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
 import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.component';
@@ -51,6 +52,10 @@ const routes: Routes = [
   {
     path: 'tdd-blog-post',
     component: BlogPostTddComponent
+  },
+  {
+    path: 'db-organization-blog-post',
+    component: BlogPostDbOrganizationComponent
   },
 ];
 
