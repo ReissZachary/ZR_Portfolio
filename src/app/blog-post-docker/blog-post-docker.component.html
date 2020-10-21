@@ -1,0 +1,101 @@
+<div class="container">
+    <h1>Docker - quickly create local environments</h1>
+    <hr>
+    <div class="logo">
+        <img width="500px" src="../../assets/docker-blog-photos/Logo-Docker.jpg" alt="docker logo">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> Show how I used dockerfile and a docker-compose file to make setting up local environemnt quick and easy</p>
+        <p><span>Why:</span> To ensure that if anyone wants/needs to run my code locally they don't have to jump through many hoops</p>
+        <p><span>How:</span> Created application images and services that were bound to enable communication and interaction between them</p>
+    </div>
+    <h3 id="heading">The Application</h3>
+    <div class="the-application">
+        <p>
+            Before diving in, I want to mention that not all the services, code snippets, or information are included in this blog.
+            Some names have been modified and changed to keep some things confidential. <br> <br>
+
+            I made this application to be a monitoring system for critical metrics at a company I work for.
+            To summarize, this application consumes many different metrics each of are which numeric values representing some measurment for an external artifact.
+            This value could be anything from age of file, last time query was executed, last time message was logged, etc.
+            If this consumed valued is outside a specific range, an alert is sent out to my team letting us know the details of that firing alert. <br> <br>
+
+            The following are a few different services I used to help enrich this application: 
+        </p>
+        <ul>
+            <li><a href="https://prometheus.io/docs/introduction/overview/">Prometheus</a> - An open-source systems monitoring and alerting toolkit</li>
+            <li><a href="https://www.prometheus.io/docs/alerting/latest/alertmanager/">Alertmanager</a> - Handles alerts sent by client applications such as the Prometheus server</li>
+            <li><a href="https://grafana.com/grafana/">Grafana</a> - Allows you to query, visualize, alert on and understand your metrics regardless where they are stored</li>
+        </ul>
+        <p>
+            We will see these services come into play later on. <br><br>
+        </p>
+        <p>
+            Now, lets dive into how I used docker to be able to run this app on any machine!
+        </p>
+    </div>
+    <h3 id="heading">The Dockerfile</h3>
+    <div class="dockerfile">
+        <p>
+            My Dockerfile is in charge of basically building my docker image(s). My Dockerfile is doing a few different things.
+            It is building mulitple images; the application API, the applicaition front-end, and then a runtime image that pretty much combines the two 
+            for me to access. Here is what my Dockerfile looks like:
+        </p>
+        <div class="img">
+            <img src="../../assets/docker-blog-photos/Dockerfile.png" alt="Dockerfile code">
+        </div>
+        <h4>The Tear Down</h4>
+        <p>
+            Lets examin what the "BUILD APPLICATION" section is doing. This is basically telling Docker to:
+        </p>
+        <ul>
+            <li>Build an image with node v10 as the base image. Calling it build-ng</li>
+            <li>Sets up some environment variables. In this case taking care of our proxy rules</li>
+            <li>Sends certifications to create handshake or secure connections</li>
+            <li>Sets my working directory to /src which is where my front-end code lives</li>
+            <li>Copies my front-end app code to the root directory of the image</li>
+            <li>Installs/updates all the neccesary packages and dependencies</li>
+            <li>Then builds the final image for production (this can be changed for development)</li>
+        </ul>
+        <p>
+            The rest of the sections follow a very similar pattern. Some have automated testing going on, but other than that they are 
+            very similar.
+        </p>
+    </div>
+    <h3 id="heading">Docker-compose and services</h3>
+    <div class="docker-compose">
+        <p>
+            My docker-compose file is in charge of defining my services. For example, the services mentioned above. I created a network
+            for all of these services to live so that they can easily interact with each other. Below is what my docker-compose looks like:
+        </p>
+        <div class="img">
+            <img src="../../assets/docker-blog-photos/Docker.compose.png" alt="docker-compose">
+        </div>
+        <h4>The Tear Down</h4>
+        <p>
+            Lots of yml code here. I know...not my favorite either. Looking more closely to the prometheus-server service, it has some properties about it:
+        </p>
+        <ul>
+            <li><span>image</span> - public prometheus image pulled from docker hub</li>
+            <li><span>env_file</span> - this is telling the image to look for environemnt variables in a secret place. Security reasons.</li>
+            <li><span>networks</span> - Says "Hey, you are going to live in this network</li>
+            <li><span>volumes</span> - tells docker to mount my project directory (/config/prometheus.config.yml) to a directory on the image (etc/prometheus/prometheus.yml)</li>
+            <li><span>ports</span> - tells docker where to make this image available om my machine.</li>
+        </ul>
+        <p>
+            It's worth pointing out the last service in my docker-compose file. That service is actually building my custom images from my Dockerfile 
+            then including them into this network with my other services. Also, the last two lines are simply declaring my available networks.
+        </p>
+    </div>
+    <h3 id="heading">Easy build - Easy run</h3>
+    <div class="build">
+        Finally...to the good stuff. After creating my Dockerfile and docker-compose file we are ready to put it all together.
+        To get this running you would simply need to type in a command prompt "docker-compose up". This boots up the services by pulling them from docker hub,
+        and creates the custom images included in my Dockfile! So cool! This become espcially handy when setting up a new environment.
+        Wasting time waiting to get a local environment ready, you can just run that command and your off. While this is in production, I also used this for
+        development also.
+    </div>
+</div>
+
+

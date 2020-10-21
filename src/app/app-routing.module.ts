@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BlogPostDbOrganizationComponent } from './blog-post-db-organization/blog-post-db-organization.component';
+import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
 import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
 import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.component';
@@ -56,6 +57,10 @@ const routes: Routes = [
   {
     path: 'db-organization-blog-post',
     component: BlogPostDbOrganizationComponent
+  },
+  {
+    path: 'docker-blog-post',
+    component: BlogPostDockerComponent
   },
 ];
 
