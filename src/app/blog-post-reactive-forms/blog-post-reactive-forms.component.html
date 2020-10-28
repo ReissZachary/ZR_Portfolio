@@ -1,0 +1,79 @@
+<div class="container">
+    <h1>Angular Reactive Forms</h1>
+    <hr>
+    <div class="logo">
+        <img width="500px" src="../../assets/reactive-forms-blog-photos/domino-effect.jpg" alt="domino-effect">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> Demonstrate how to take advantage of Angular reactive-forms</p>
+        <p><span>Why:</span> Reactive forms can really help make your app feel responsive and efficient</p>
+        <p><span>How:</span> Utilizing FormBuilder, FormControl, and Validators</p>
+    </div>
+    <h3 id="heading">Reactive Forms</h3>
+    <div class="reactive-forms">
+        <p>
+            Angular has two different types of forms, Template Driven Forms and Reactive Forms.
+            On the outside these two different form types may seem similar but underneath they are fairly different.            
+       
+            I have recently been looking at cruises to go on after I graduate. I have visited many different sites, one of which I saw a cool function
+            that was practical. I wanted to to and implement it myself using reactive forms. <br>
+            
+            <br> What I wanted to recreate was when the potential customer inputs the number of people travelling, it generates n number of forms for <br>
+            each person to fill out. These forms contain things like name, email, birthday, etc. This led me to where this app is now. Still a work in progress! 
+            Working with reactive forms have made me aware of some key benefits of choosing reactive over template. They are listed below:
+        </p>
+        <ul>
+            <li>You can easily test validation logic by enstantiating the class, giving it some field values and asserting those are correct</li>
+            <li>Even though you can do the same things with either type of form, reactive forms seem to make the complex operations not so complex</li>
+            <li>Seems to fit the need for complex inter-field business validations</li>
+        </ul>
+    </div>
+    <h3 id="heading">My code</h3>
+    <div class="my-code">
+        <p>
+            To make a reactive form, I used a form group. A form group allows you to define fields and specify if they are required or not.
+            Once the form, with its fields, is created I made a binding to the form element using the [formGroup] directive.
+            This is basically telling the form to have a place for the FormGroup fields to live. <br>
+            Below is where I created the FormGroup and where I am binding my template using the formGroup directive:
+        </p>
+
+        <h5>Form Creation</h5>
+        <img src="../../assets/reactive-forms-blog-photos/formBuilder.png" alt="code">
+        <br>
+        <h5>Form Binding</h5>
+        <img src="../../assets/reactive-forms-blog-photos/formBinding.png" alt="code">
+        <p>
+            This reactive form has two form controls:
+        </p>
+        <ul>
+            <li>numberOfTickets - This is bound to the select element using the formControlName directive</li>
+            <li>tickets - This is an Angular FormArray that will hold all the forms filled out by the user. Each ticket group will hold 
+                information like Name, Email, Birthday, etc.
+            </li>
+        </ul>
+        <p>
+            My onChangeTickets function is where to reactivness happens. The number of tickets will increment or decrement depending on the 
+            input of the select element. Below is my code:            
+        </p>
+        <img src="../../assets/reactive-forms-blog-photos/onChangeTIckets.png" alt="code">
+        <p>
+            I also created a onSubmit(), onReset(), and onClear() methods. The onSubmit() method simply validates the form to makes sure
+            there are no errors, then, if no errors, "submits" them by converting them to json and displaying that to the user. <br> <br>
+            The onReset() method simply resets the form to its inital state removing any values previously input. And removing all tickets completely <br> <br>
+            The onClear() method simply clears the form removing and input and any validation messages.
+        </p>
+        <img src="../../assets/reactive-forms-blog-photos/submitResetClear.png" alt="code">
+        <br>
+        <p>
+            Here is a video clip with a small demo of the coolest app. I should mention that the video did not pick up the drop down to pick how many tickets I want
+            and did not pick up the date picker..
+        </p>
+        <video width="1000" height="800" controls>
+            <source src="../../assets/reactive-forms-blog-photos/submit-form.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+          </video>
+    </div>
+</div>
+
+

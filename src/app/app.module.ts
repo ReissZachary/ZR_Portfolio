@@ -19,6 +19,7 @@ import { BlogPostSqlJoinsComponent } from './blog-post-sql-joins/blog-post-sql-j
 import { BlogPostTddComponent } from './blog-post-tdd/blog-post-tdd.component';
 import { BlogPostDbOrganizationComponent } from './blog-post-db-organization/blog-post-db-organization.component';
 import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.component';
+import { BlogPostReactiveFormsComponent } from './blog-post-reactive-forms/blog-post-reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.com
     BlogPostTddComponent,
     BlogPostDbOrganizationComponent,
     BlogPostDockerComponent,
+    BlogPostReactiveFormsComponent,
   ],
   imports: [
     BrowserModule,

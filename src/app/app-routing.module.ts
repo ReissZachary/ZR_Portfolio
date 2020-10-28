@@ -4,6 +4,7 @@ import { BlogPostDbOrganizationComponent } from './blog-post-db-organization/blo
 import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
 import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
+import { BlogPostReactiveFormsComponent } from './blog-post-reactive-forms/blog-post-reactive-forms.component';
 import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.component';
 import { BlogPostSqlJoinsComponent } from './blog-post-sql-joins/blog-post-sql-joins.component';
 import { BlogPostTddComponent } from './blog-post-tdd/blog-post-tdd.component';
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path: 'docker-blog-post',
     component: BlogPostDockerComponent
+  },
+  {
+    path: 'reactive-forms-blog-post',
+    component: BlogPostReactiveFormsComponent
   },
 ];
 
