@@ -20,6 +20,7 @@ import { BlogPostTddComponent } from './blog-post-tdd/blog-post-tdd.component';
 import { BlogPostDbOrganizationComponent } from './blog-post-db-organization/blog-post-db-organization.component';
 import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.component';
 import { BlogPostReactiveFormsComponent } from './blog-post-reactive-forms/blog-post-reactive-forms.component';
+import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { BlogPostReactiveFormsComponent } from './blog-post-reactive-forms/blog-
     BlogPostDbOrganizationComponent,
     BlogPostDockerComponent,
     BlogPostReactiveFormsComponent,
+    BlogPostGitComponent,
   ],
   imports: [
     BrowserModule,

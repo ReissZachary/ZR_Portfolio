@@ -1,0 +1,107 @@
+<div class="container">
+    <h1>Got Git? The git tutorial for beginners</h1>
+    <hr>
+    <div class="logo">
+        <img width="500px" src="../../assets/git-blog-photos/git-logo.png" alt="git logo">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> A git tutorial for those beginning with git</p>
+        <p><span>Why:</span> Because putting your code in version control has so many benefits!</p>
+        <p><span>How:</span> We will walk through the basic commands to start your journey to becoming a git wizard</p>
+    </div>
+    <h3 id="heading">What is git</h3>
+    <div class="what">
+        <p>
+            Git is an open source version control system. What does that mean? Well, open source simply means that anyone...yes..even you..
+            can contribute to the project. This is done by checking out the code, writing some super awesome new feature, submitting your code to 
+            be reviewed, then pushing your changes to production. Version control systems main purpose is to maintain and track code changes over time.
+            Version control systems, like git, store all the changes made to code in a database, along with other data like who made the change, and what 
+            type of chages were made. Git is one of those systems and using something like git has many benefits. <br> Consider the following..
+        </p>
+        <ul>
+            <li>
+                Like mentioned above, git track code changes over a period of time. This means that 
+                if something goes wrong, a record of the changes and events which lead up to 
+                the problem will be available.
+            </li>
+            <li>
+                Git allows you (and your team) to store different versions of their project.
+                So, as soon as a new release is ready, it can be stored alongside a name, 
+                a description of the release, and any other relevant metadata (such as the name of the author, and so on).
+            </li>
+            <li>
+                Git is very efficient and very easy for beginners to pick up. Cloning, merging, pushing, and committing can be done
+                with nice, clean, easy to remember syntax.
+            </li>
+            <li>
+                Git is used by many many developers. This means that finding docs/support is very easy
+            </li>
+            <li>
+                Git includes something called branching which lets you, along with other team members, work on different parts of the code
+                without disrupting one another
+            </li>
+        </ul>
+        <h4>Git Jargon</h4>
+        <p>
+            When first learning git, you will most likely hear terms that you don't know what they mean. Some of the most common are 
+            "commit", "push", "branch", and "repository". Lets define some of these before looking at an example: <br> <br>
+
+            <span>repository </span>- Also known as a 'repo'. The best way to put this is that git uses 'repository' to refer to your project.
+            So think of a repo simply as your project. A repo not only stores your code but it keeps track of change history as well <br> <br>
+
+            <span>commit: </span>- A commit is a saved change made to a repository.
+            Whenever you make a change to your code, you should commit it to the Git repository.
+            This adds a record of the change you have made to the changelog of your repository, to which you can refer back in the future. <br> <br>
+
+            <span>push: </span>- pushing your code means that you are taking your code (on your machine) in a local repo and transferring it to
+            a remote repo somewhere on a different machine. <br> <br>
+
+            <span>branch: </span>- Branches are independent versions of the code stored in a repo which allow developers
+            to make multiple changes to a codebase without affecting the main copy of the code. <br> <br>
+
+            Lets got some practice in!
+        </p>
+    </div>
+    <h3 id="heading">Practice!</h3>
+    <div class="my-code">
+        <p>
+            For this practice session, I created a new .NET Core console application. <br> <br>
+            To initial a new git repo for a project, make sure you are in that project directory and run <span class="git-code">git init.</span>
+            <br><br>
+            Now that git is initialized, lets make some changes. I went ahead and changed my Program.cs file to instead of saying
+            "Hello World" it now says "Hellow Wonderful World". Since I changed my code I should tell git to track and stage it to get ready for 
+            commit. To do this I run <span class="git-code">git add (filename)</span>. I think it is worth mentioning that <span>git add .</span> with the . after the add 
+            will do the same thing. The . means to add all changed files to the repo.
+            <br><br>
+            To ensure we are tracking and have added the right files, you can run <span class="git-code">git status</span>. This tells you are the files
+            being tracked currently. This is what it would look like after we made the change mentioned above and added that file to git
+            
+            <img src="../../assets/git-blog-photos/git-status.png" alt="code">
+            
+            isnt that nice??!
+            <br><br>
+
+            Once you've added all the changed files you want, you are ready to commit! To commit your changes, simply run the command <span class="git-code">git commit -m 'your message'</span>.
+            Here, the '-m' means that the following text is going to be the commit message. It is alway best to have clear commit messages.
+            Lets see this in our demo
+
+            <img src="../../assets/git-blog-photos/git-commit.png" alt="code">
+
+            Now that you've commited your code, you are ready to push the committed changes into production/master. The command for this is 
+            <span class="git-code">git push</span>. If you get an error saying something like "fatal: No configured push destination." this most likely
+            means you need to create a <a href="https://github.com/join?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E&source=header"> new github repo</a>.
+            Once that is done, simply copy the second options commands on your new github repo page, and paste them into the terminal like so 
+            
+            <img src="../../assets/git-blog-photos/git-push.png" alt="code">
+
+            Those are the most basic and most used git commands you will use. Especially as a beginner to be able to keep your code in version control
+            just by running a few simply commands!
+            <br> <br>
+            NOTE: There are so many more git commands to learn. Visit <a href="https://www.tutorialspoint.com/gitlab/gitlab_git_commands.htm">this site</a> to get more of those commands
+        </p>
+    </div>
+</div>
+
+
+

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BlogPostDbOrganizationComponent } from './blog-post-db-organization/blog-post-db-organization.component';
 import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.component';
+import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
 import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
 import { BlogPostReactiveFormsComponent } from './blog-post-reactive-forms/blog-post-reactive-forms.component';
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path: 'reactive-forms-blog-post',
     component: BlogPostReactiveFormsComponent
+  },
+  {
+    path: 'git-blog-post',
+    component: BlogPostGitComponent
   },
 ];
 
