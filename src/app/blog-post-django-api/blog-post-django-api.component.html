@@ -1,0 +1,109 @@
+<div class="container">
+    <h1>Django - Working with APIs</h1>
+    <hr>
+    <div class="logo">
+        <img width="500px" src="../../assets/django-api-blog-photos/Django-logo.svg.png" alt="git logo">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> Using python and Django to create my own api</p>
+        <p><span>Why:</span> Python and Django are both rapidly growing so knowing my around around them is a good idea</p>
+        <p><span>How:</span> Using PyCharm and djangorestframework</p>
+    </div>
+    <h3 id="heading">What is Django</h3>
+    <div class="what">
+        <p>
+            To get straight to the point, Django (jang-goh) is a Python based open-source web framework. Django has many different and powerful tools
+            that can simple be used in development. Django eases the making of complex, database driven websites that strive for reusability, less code, low coupling,
+            and following the DRY principle (Don't Repeat Yourself). While I could spend lots of time showing all the cool and expansive functionalities of Django, I want
+            to focus on how I made a simple API. 
+        </p>
+    </div>
+    <h3 id="heading">Prerequisites</h3>
+    <div class="prereqs">
+        <p>
+            For this project I was using the following:
+        </p>
+        <ul>
+            <li>Python (3.8.6) - Installing the latest verison of Python on my machine to ensure compatibility with Django</li>
+            <li>Django (3.1.3) - This is installed in my virtual environment</li>
+            <li>PyCharm - PyCharm is nice becuase it sets up the virtual environment automatically, and has some great tools for developing Python/Django apps</li>
+            <li>Django Rest Client - This is a Django REST framework that is a flexible toolkit for building Web APIs </li>
+        </ul>
+        <p>
+            Enough of those pre-reqs...Let's get to the good stuff!!
+        </p>
+    </div>
+    <h3 id="heading">Making the API</h3>
+    <div class="code">
+        <p>
+            For this project I wanted to create an API that allowed me to get information about the character in the Nintendo 64 version of Super Smash Brothers
+            becuase who doesn't love that game?? <br> <br>
+
+            After creating my project in PyCharm (which also created my virtualenv as well) I could start writing my API <br> <br>
+
+            Since I am using Django and djangorestframework I needed to install them into my environment by running <span>'pip install django'</span> and <span>'pip install djangorestframework'</span>.
+            After running those commands I set up a new project with a single app by running <span>'django-admin startproject superSmashers'</span> and <span>'django-admin startapp characters'</span>. 
+            With those create we can create out models <br>
+        </p>
+        <h4>Models</h4>
+        <div class="models">
+            <p>
+                "Models are the single, definitive source of information about your data. It contains the essential fields and behaviors of the data you’re storing. Generally, each model maps to a single database table."
+                This basically means that, with Django, you can easily create models that will then be quickly mapped to your database using migrations. Models have fields which are mapped to the table columns.
+                Here is an example of my character model.
+            </p>
+            <br>
+            <img style="width: 600px;" src="../../assets/django-api-blog-photos/character-model.png" alt="">
+            <p>
+                Once I created my model, I migrated the changes in the DB and using the admin UI that is built in to Django I was able to add the characters to the database.
+            </p>
+        </div>
+        <h4>Serializers</h4>
+        <div>
+            <p>
+                Serializers allow complex objects be to converted native Python datatypes that can then be easily rendered into JSON, XML or any other types that may fill your needs. <br>
+                Below is my serializer
+            </p>
+            <img src="../../assets/django-api-blog-photos/serializer.png" alt="code">
+            <p>Comple things to point out</p>
+            <ul>
+                <li>I am using a HyperLinkModelSerializer bcause if I had nested relaitons within my model, it would easily pick them up. Also it makes mapping to my model super easy.
+                    With the HyperLinkModelSerializer it maps directly to my model which reduces the amount of repeated code
+                </li>
+                <li>All I needed to do to set up this serializer was give it the fields to include in the render. Then Django takes care of the rest...Cool!</li>            
+            </ul>
+        </div>
+        <h4>Views</h4>
+        <div>
+            <p>
+                In Django, a view or viewset is similar to other REST modules like controllers. They provide methods to interact with the models and data. 
+                <br> Here is what my viewset looks like:
+            </p>
+            <img src="../../assets/django-api-blog-photos/character-view.png" alt="code">
+            <p>
+                Here, I am simply telling this view to get the characters and serialize them so that when we hit this view we get the JSON we expect.
+            </p>
+        </div>
+        <h4>Urls</h4>
+        <div>
+            <p>
+                Last but not least I set up my urls to retrieve the JSON results of my characters. A cool thing with viewsets is I can automatically
+                generate a URL simply by registering my viewset with the router class. 
+                <br> Here is my urls where I am registering my viewset and then using 'api-auth' path which leverages rest-frameworks url
+            </p>
+            <img src="../../assets/django-api-blog-photos/character-url.png" alt="">
+        </div>
+        <h4>Putting it all together</h4>
+        <div>
+            <p>
+                After adding my models, serializer, viewset, and urls we can finally get a response back! Here is my response: <br>
+                (Note: due to lack of space, this is only the first few characters in the Nintendo 64 Super Smash Bros game)
+            </p>
+            <img src="../../assets/django-api-blog-photos/characters.png" alt="JSON response">
+        </div>
+    </div>
+</div>
+
+
+
