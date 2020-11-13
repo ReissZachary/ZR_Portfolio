@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BlogPostDbOrganizationComponent } from './blog-post-db-organization/blog-post-db-organization.component';
 import { BlogPostDjangoApiComponent } from './blog-post-django-api/blog-post-django-api.component';
+import { BlogPostDjangoPostgresComponent } from './blog-post-django-postgres/blog-post-django-postgres.component';
 import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.component';
 import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
@@ -76,6 +77,10 @@ const routes: Routes = [
   {
     path: 'django-api-blog-post',
     component: BlogPostDjangoApiComponent
+  },
+  {
+    path: 'django-postgres-blog-post',
+    component: BlogPostDjangoPostgresComponent
   },
 ];
 

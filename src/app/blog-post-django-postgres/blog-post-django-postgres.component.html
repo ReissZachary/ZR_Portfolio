@@ -1,0 +1,89 @@
+<div class="container">
+    <h1>Django and Postgres</h1>
+    <hr>
+    <div class="logo">
+        <img width="500px" src="../../assets/django-postgres-blog-phtos/card-photo.png" alt="git logo">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> Integrating a Postgres docker image with Django</p>
+        <p><span>Why:</span> Expand the capabilities of Django by using an external db</p>
+        <p><span>How:</span> Simply running a postgres docker image, create a superuser, provide Django the DB credentials</p>
+    </div>
+    <h3 id="heading">Prerequisites</h3>
+    <div class="prereqs">
+        <p>
+            I like using PyCharm for my Django project. This is because when creating a new project PyCharm automatically creates
+            a virtual environment for you. I a big fan of doing less :)
+            <br>            
+        </p>
+        <h5><span>Postgres</span></h5>
+        <p>
+            Usually I would need to download Postgresql from their website, but instead of doing this I wanted to have my own
+            lightweight docker image. I did this becuase docker is awesome, the image is very small compared to actually downloading it, 
+            and I can easily spin up my image using a docker-compose file.
+        </p>
+        <h5><span>psycopg2</span></h5>
+        <p>
+            This is the PostgresSql database adapter that allows Python and Django to communicate with my postgres database image.
+            To do this, I ran <span>pip install psycopg2</span> within my virtual environment in PyCharm.
+        </p>
+    </div>
+    <h3 id="heading">Create SuperUser</h3>
+    <div class="superuser">
+        <p>
+            By default, postgres generates a SuperUser called postgres. A SuperUser is basically authorized to edit tables, create datbases, 
+            and create roles. I wanted to create a new superuser so that my Django app could access my database using that user. <br>
+
+            To do this in my docker image, I ran the following command to get me into the interactive shell within my running image.
+            <span>docker exec -it pg-django psql -U postgres</span> this opens the shell for pg-django with the default superuser named postgres <br>
+
+            Below are the commands I ran to create a superuser and grant him super access!
+        </p>
+        <ul>
+            <li><span>CREATE DATABASE djangodb;</span> - This creates a new database that my Django app will access</li>
+            <li><span>CREATE USER superuser WITH ENCRYPTED PASSWORD 'mysuperpass';</span> - This creates a new superuser with an encrypted password. Django will use both of these to gain access</li>
+            <li><span>ALTER ROLE superuser SET client_encoding TO 'utf8';</span> - This sets the default encoding to utf8. Django expects this type of encoding</li>
+            <li><span>GRANT ALL PRIVILEGES ON DATABASE djangodb TO superuser;</span> - This is the nail in the coffin. The almighty access grant to our new superuser!</li>
+        </ul>
+    </div>
+    <h3 id="heading">Change the default settings</h3>
+    <div class="code">
+        <p>
+            Great! Now the hard part is done, I can link the two together! This is the easy part :)<br> <br>
+
+            In my Django app, I opened the settings.py file and found the DATABASE section. By default Django has already set up its own database
+            but we want to overwrite that. Here is what the default setup looked like:
+        </p>        
+        <img src="../../assets/django-postgres-blog-phtos/default-database.png" alt="code">
+        <p>
+            And here are the changes I made:
+        </p>
+        <img src="../../assets/django-postgres-blog-phtos/new-database.png" alt="code">
+        <p>
+            I made sure that I was using the previously installed <span>psycopg2</span>.
+            I made sure that I gave the correct <span>name</span> of my database.
+            I made sure to give it the new <span>user</span> and <span>password</span> I created.
+            Finally, I gave it the <span>host</span> and <span>port</span>. 
+        </p>
+    </div>
+    <h4>Wrap it Up!</h4>
+    <div>
+        <p>
+            To test it out, I created some models (<a href="https://www.zachreisssoftware.dev/django-api-blog-post">see this post</a>),
+            then made my migrations. <br>
+            I made a character model (from the above link) and a user model that would store user info like name, username, age, and password.
+            <br><br>
+            Once these were created, I ran <span>python manage.py makemigrations</span> which basically adds the new changes to my list of things to migrate.
+            Then I ran <span>python manage.py migrate</span> which adds the changes I staged with the previous command. Then, using docker excec I could access
+            and see if my app is communicating with my database. Below I ran a select statement to prove my migrations are working
+        </p>
+        <img src="../../assets/django-postgres-blog-phtos/docker-exec.png" alt="code">
+        <p>
+            Just like that, I have a working postgres database connected to my Django app!
+        </p>
+    </div>
+</div>
+
+
+

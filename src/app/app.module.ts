@@ -22,6 +22,7 @@ import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.com
 import { BlogPostReactiveFormsComponent } from './blog-post-reactive-forms/blog-post-reactive-forms.component';
 import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
 import { BlogPostDjangoApiComponent } from './blog-post-django-api/blog-post-django-api.component';
+import { BlogPostDjangoPostgresComponent } from './blog-post-django-postgres/blog-post-django-postgres.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { BlogPostDjangoApiComponent } from './blog-post-django-api/blog-post-dja
     BlogPostReactiveFormsComponent,
     BlogPostGitComponent,
     BlogPostDjangoApiComponent,
+    BlogPostDjangoPostgresComponent,
   ],
   imports: [
     BrowserModule,
