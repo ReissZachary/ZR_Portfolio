@@ -23,6 +23,7 @@ import { BlogPostReactiveFormsComponent } from './blog-post-reactive-forms/blog-
 import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
 import { BlogPostDjangoApiComponent } from './blog-post-django-api/blog-post-django-api.component';
 import { BlogPostDjangoPostgresComponent } from './blog-post-django-postgres/blog-post-django-postgres.component';
+import { MainSkillsListComponent } from './main-skills-list/main-skills-list.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { BlogPostDjangoPostgresComponent } from './blog-post-django-postgres/blo
     BlogPostGitComponent,
     BlogPostDjangoApiComponent,
     BlogPostDjangoPostgresComponent,
+    MainSkillsListComponent,
   ],
   imports: [
     BrowserModule,

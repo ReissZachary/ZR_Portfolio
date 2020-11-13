@@ -58,7 +58,7 @@ export const SKILLS: Skill[] = [
     {
         id: '28511b08-01a1-462c-807c-c717cf70d015',
         name: 'TDD',
-        confidenceLevel: 6,
+        confidenceLevel: 7,
         proof: 'Conviced team to be writing more tests on their code'
     },
     {
@@ -70,7 +70,7 @@ export const SKILLS: Skill[] = [
     {
         id: '4ab051ae-cdcf-4bd9-8f88-f82232eb6957',
         name: 'Docker',
-        confidenceLevel: 5,
+        confidenceLevel: 6,
         proof: 'Created images for different services that were all able to communicate with eachother passing data etc.'
     },
     {
@@ -78,5 +78,11 @@ export const SKILLS: Skill[] = [
         name: 'REST APIs',
         confidenceLevel: 9,
         proof: 'Created website for sister that took advantage of an API I created to interact with database and update UI. Created REST api for a monitoring system at work'
+    },
+    {
+        id: '4dadae4a-ec44-43d4-b87b-f7a5581ee62c',
+        name: 'Django',
+        confidenceLevel: 7,
+        proof: 'Created simple api with basic CRUD operations and integrated PostgresSQL with it'
     },
 ]
