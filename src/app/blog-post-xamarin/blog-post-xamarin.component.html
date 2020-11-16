@@ -1,0 +1,95 @@
+<div class="container">
+    <h1>Recipe App</h1>
+    <hr>
+    <div class="logo">
+        <img width="300px" src="../../assets/Xamarin-blog-photos/xamarin-logo.png" alt="xamarin-logo">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> A mobile recipe application built using Xamarin</p>
+        <p><span>Why:</span> To store, create, and edit personal and family favorite recipes</p>
+        <p><span>How:</span> By using a MVVM architecture, Xamarin Forms, and SQLite Db</p>
+    </div>
+    <h3 id="heading">Why Xamarin Forms?</h3>
+    <div class="why-xamarin">
+        <p>
+            When developing mobile applications, there were two different paths I was choosing from. I could create platform specific apps using
+            Java/Kotlin for Android and Objective-C or Swift for iOS/Apple or I could use Xamarin Forms and not have to worry about the extra overhead
+            of learning those platform specific languages. For this application I chose Xamarin. I am aware of the pros and cons for each route, but 
+            the reasoning behind my choice is as follows
+        </p>
+        <ul>
+            <li>Shared UI - Xamarin allows me to share UI design and layout across platforms. This extends to windows too I beleive!</li>
+            <li>Shared logic - Just as a shared UI, my business logic can be shared across platforms as well. This reduces development time and cost dramatically</li>
+            <li>Visual Studio and C# - Instead of tackling multiple languages like Java/Kotlin/Objective-C/Swift I can develop in Visual Studio and C# and Xamarin takes care of the rest</li>
+        </ul>
+    </div>
+    <h3 id="heading">MVVM</h3>
+    <div class="mvvm">
+        <div style="text-align: center;">
+            <img style="width: 600px;" src="../../assets/Xamarin-blog-photos/mvvm.png" alt="mvvm">
+        </div>
+        <p>
+            The MVVM architecture stands for <span>Model - View - ViewModel</span>. I especially like using it with when developing mobile
+            applications because its main focus is to separate the business logic from the presentation logic. This all makes sense to me, 
+            and I like to have some code organization in my project. 
+        </p>
+        <ul>
+            <li>
+                <span>M</span>odel - These are your objects being acted on. In the case of this app, my models are Recipe and Ingredients.
+                both of which have their own properties associated.
+            </li>
+            <li>
+                <span>V</span>iew - This is where the presentation logic lives. In Xamarin, this is a .xaml file.
+                Some of my views are MainPage.xaml and DetailsPage.xaml
+            </li>
+            <li>
+                <span>V</span>iew<span>M</span>odel - This is basically the messenger between the model and view. This is where databinding and command events
+                are made. The rule of thumb here is that for every view I have, I have a viewmodel that goes with it. For example, my MainPage.xaml has a
+                MainPageViewModel.cs that takes care of command events and databinding for that view.
+            </li>
+        </ul>
+    </div>
+    <h3 id="heading">The Recipe App</h3>
+    <div class="app">
+       <p>
+            The app I created using these previously mentioned frameworks and architectures is a pretty simple one. I wanted to be able to
+            view, create, edit, and delete my favorite recipes. This app accomplishes these use cases. Here are some screen shots of how it looks
+       </p>
+       <div>
+           <h4>Main Page</h4>
+           <img style="width: 600px;" src="../../assets/Xamarin-blog-photos/main-page.png" alt="app main page">
+           <p>
+                The main page is where all of my favorite recipes can be viewed. My View has databinding on all of my stored 
+                recipes so that if and when I add one, it can immediately be seen on the home screen. I displayed them using xaml ListView.
+           </p>
+       </div>
+       <div>
+        <h4>Add Recipe Page</h4>
+        <img style="width: 600px;" src="../../assets/Xamarin-blog-photos/Add-recipe-page.png" alt="add page">
+        <p>
+             This is how and where you create a new recipe. It has some basic attributes like title, instructions, and ingredients. When adding 
+             a new ingredient, it will automatically appear below the save button letting you know which ingredients you've added. What you are seeing
+             here are a bunch of Label and Entry xaml properties on my view all with databinding.  
+        </p>
+        </div>
+        <div>
+            <h4>Detail Page</h4>
+            <img style="width: 400px;" src="../../assets/Xamarin-blog-photos/recipe-page.png" alt="detail page">
+            <p>
+                 This is where a user can access their recipes to edit or remove them. This is all made possible with databinding 
+                 between my View and ViewModel. 
+            </p>
+        </div>
+    </div>
+    <h4>Wrap it Up!</h4>
+    <div>
+        I want to point out that the app has some minor bugs that deal with orientation, wrapping or not wrapping, etc. I am no longer working 
+        on this, but feel like it is a great demonstration of key principles in mobile app development using Xamarin. To see my code in full, visit 
+        <a href="">my github here!</a>
+    </div>
+</div>
+
+
+
+

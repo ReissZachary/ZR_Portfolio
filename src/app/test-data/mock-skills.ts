@@ -85,4 +85,10 @@ export const SKILLS: Skill[] = [
         confidenceLevel: 7,
         proof: 'Created simple api with basic CRUD operations and integrated PostgresSQL with it'
     },
+    {
+        id: '0ddcef0c-3384-4cfb-98a4-4718c4162f58',
+        name: 'Xamarin App Development',
+        confidenceLevel: 6,
+        proof: ''
+    },
 ]

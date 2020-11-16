@@ -24,6 +24,7 @@ import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
 import { BlogPostDjangoApiComponent } from './blog-post-django-api/blog-post-django-api.component';
 import { BlogPostDjangoPostgresComponent } from './blog-post-django-postgres/blog-post-django-postgres.component';
 import { MainSkillsListComponent } from './main-skills-list/main-skills-list.component';
+import { BlogPostXamarinComponent } from './blog-post-xamarin/blog-post-xamarin.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { MainSkillsListComponent } from './main-skills-list/main-skills-list.com
     BlogPostDjangoApiComponent,
     BlogPostDjangoPostgresComponent,
     MainSkillsListComponent,
+    BlogPostXamarinComponent,
   ],
   imports: [
     BrowserModule,
