@@ -1,4 +1,11 @@
 .blog-post-container{
     display: flex;
     flex-wrap: wrap;
+    margin: 0 8em 4em 8em;
+}
+.page{
+    margin: 0 8em 0 8em;
+}
+img{
+    height: 300px;
 }
