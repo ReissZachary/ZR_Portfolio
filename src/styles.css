@@ -48,3 +48,6 @@ h4{
 .heading{
     margin: 0 5em 0 5em;
 }
+code{
+    background-color: #ededed;
+}

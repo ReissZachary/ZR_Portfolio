@@ -91,4 +91,10 @@ export const SKILLS: Skill[] = [
         confidenceLevel: 6,
         proof: ''
     },
+    {
+        id: '470340a6-77cd-405e-b987-1c21ada8dbe2',
+        name: 'Elixir',
+        confidenceLevel: 7,
+        proof: 'Created multiple apps using Elixir including a Game Of Life solver that won a competition for fastest solver. Attended Elixir user group.'
+    },
 ]

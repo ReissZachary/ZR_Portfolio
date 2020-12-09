@@ -1,0 +1,96 @@
+<div class="container">
+    <h1>The Wonders of Elixir</h1>
+    <hr>
+    <div class="logo">
+        <img src="../../assets/elixir-blog-photos/Elixir logo.png" alt="elixir-logo" style="width: 500px;">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> Demonstrate how I created a solution to Game Of Life in Elixir</p>
+        <p><span>Why:</span> Elixir is very efficient and a great candidate for distributed systems</p>
+        <p><span>How:</span> Not only wrote a solution for Game Of Life, but came up with an algorithm to quickly solve hundreds of generations within minutes</p>
+    </div>
+    <h3 id="heading">Elixir</h3>
+    <div class="elixir">
+        <p>
+            Elixir is a functional programming language that is executed on Erlang virtual machine BEAM. Elixir was created in 2012 and has
+            become a very popular language of choice among developers. Elixir is very efficient because it utilizes all of the processor cores by default.
+            This comes default from running on the BEAM. Since Elixir is built on top of Erlang, it is fault-tolerant. In fact, it is part of the
+            <a href="https://en.wikipedia.org/wiki/High_availability">nine-nines</a> languages. Lastly, since elixir code runs inside threads, it is very scalable.
+            Since it is purely functional, it is very thread safe which open doors to parallel computing. 
+        </p>
+    </div>
+
+    <h3 id="heading">Summary</h3>
+    <div class="summary">
+        <h4>The Competition</h4>
+        <p>
+            This project was the result of a contest my school put together to see who solve x generations of the Game of Life the quickest.
+            It worked by having a game server that each team could register on. Once the go button was pushed, each team received the starting board
+            and how many generations to compute, then it was off to the races. There was a combination of students and professors competing in a variety of 
+            languages. 
+        </p>
+        <h4>My Team and Solution</h4>
+        <p>
+            I was in a team of two with another student. While we mostly worked together on the whole project, I will show you the code I wrote myself. 
+            A brief summary of our algorithm was once we got the starting board, we split it into smaller 10x10 boards with each board living in its own GenServer.
+            Then for each board (which we called a captuum) we solved it for x amount of generations eventually putting it all back together to get the final board.
+        </p>
+    </div>
+
+    <h3 id="heading">Generic Game Solver</h3>
+    <div class="Code">
+        <p>
+            One aspect of the code I was in charge of was writing the solver. This would be applied to each active board in our threads. The code can be found below.
+        </p>
+        <div class="img">
+            <img src="../../assets/elixir-blog-photos/count-live-func.png" alt="code">
+            <img src="../../assets/elixir-blog-photos/get-all-neighbors-func.png" alt="code">
+            <img src="../../assets/elixir-blog-photos/get-neighbors-func.png" alt="code">
+        </div>
+        <p>
+            Here are 3 functions <code>count_live</code>, <code>get_neighbors_for_board</code>, and <code>get_neighbors</code>
+            Each one is described below
+        </p>
+        <ul>
+            <li><code>count_live</code> - this simply counts all the live cells around a specific cell in the board</li>
+            <li><code>get_neighbors_for_board</code> - this gets all the neighbors for each cell in the board. So each cell will be accounted for in this list</li>
+            <li><code>get_neighbors</code> - given a cell, this function returns all of its neighbors.</li>
+        </ul>
+        <p>
+            Once we had these helper functions, we could put them all together in another function
+        </p>
+        <div class="img">
+            <img src="../../assets/elixir-blog-photos/advance-func.png" alt="code">
+        </div>
+        <p>
+            As the comment says, this calculates the next state of the board by taking into account all the live cells left over and any cells that
+            could come back to life if one of their neighbors comes alive. 
+        </p>
+    </div>
+
+    <h3 id="heading">Tests</h3>
+    <div class="tests">
+      <p>
+          Along with this, I created tests to make sure everything was running correctly. I took the rules of the game and made them into tests so that if 
+          they pass, we know we have found a solution and can solve any number of generations. Below are some examples of the tests I was running. 
+      </p>
+      <div class="img">
+        <img style="width: 700px;" src="../../assets/elixir-blog-photos/test-1-2.png" alt="code">
+        <img style="width: 700px;" src="../../assets/elixir-blog-photos/test-3-4.png" alt="code">
+      </div>
+    </div>
+    
+    <h3 id="heading">Our Algorithm</h3>
+    <div class="algorithm">
+       <p>
+           As mentioned before, we decided to break apart out starting board into smaller chunks so that we could start solving them in parallel and also
+           be able to predict what the next generation was going to look like. To keep this post simply and to the point, I will include a link to my GitHub
+           repo of this project <a href="https://github.com/ReissZachary/gameOfLifeContest">HERE.</a> Feel free to go check it out!
+       </p>
+    </div>
+</div>
+
+
+
+
