@@ -25,6 +25,7 @@ import { BlogPostDjangoApiComponent } from './blog-post-django-api/blog-post-dja
 import { BlogPostDjangoPostgresComponent } from './blog-post-django-postgres/blog-post-django-postgres.component';
 import { MainSkillsListComponent } from './main-skills-list/main-skills-list.component';
 import { BlogPostXamarinComponent } from './blog-post-xamarin/blog-post-xamarin.component';
+import { BlogPostPhpLaravelApiComponent } from './blog-post-php-laravel-api/blog-post-php-laravel-api.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { BlogPostXamarinComponent } from './blog-post-xamarin/blog-post-xamarin.
     BlogPostDjangoPostgresComponent,
     MainSkillsListComponent,
     BlogPostXamarinComponent,
+    BlogPostPhpLaravelApiComponent,
   ],
   imports: [
     BrowserModule,

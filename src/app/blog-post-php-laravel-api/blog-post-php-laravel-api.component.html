@@ -1,0 +1,113 @@
+<div class="container">
+    <h1>PHP + Laravel Api</h1>
+    <hr>
+    <div class="logo">
+        <img width="300px" src="../../assets/php-laravel-api-photos/php-logo.png" alt="php-logo">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> A Super Smash Brothers api built using Laravel and PHP that executes CRUD operations on a Super Smash Brothers database</p>
+        <p><span>Why:</span> To create a rest api using a popular PHP framework</p>
+        <p><span>How:</span> By taking advantage of Laravels MVC structure, controllers, built in database, and built in routing features</p>
+    </div>
+    <h3 id="heading">PHP + Laravel</h3>
+    <div class="php-larvel">
+        <p>
+            <span>Php</span> is one of the most popular languages today especially among web developers.
+            Together with its simplicity, scalability, community, and flexibility php offers diverse frameworks like Laravel. <br> <br>
+            <span>Laravel</span> is one of the most popular PHP frameworks used to build web apps. I have really enjoyed learning and using Laravel
+            simply because of its scalability, familiarity, and features. There are many other frameworks to choose from, but the reason I chose
+            Laravel is because of the points above. Above all, Laravel is the most widely used. 
+        </p>
+    </div>
+
+    <h3 id="heading">Summary</h3>
+    <div class="summary">
+        <p>
+            This is a similar api that I created in Django. To check out that blog post go <a href="https://www.zachreisssoftware.dev/django-api-blog-post">HERE.</a>
+            What this api does is allows a user to create Super Smash characters then be able to execute CRUD operations on those characters. It utilizes 
+            a built in database where the characters are stored.
+        </p>
+    </div>
+
+    <h3 id="heading">Routes</h3>
+    <div class="routes">
+        <p>
+            Routes are a crucial part in creating a RESTful api in Laravel. Routes are basically the endpoints that will be hit by POST, GET, UPDATE, etc. requests.
+            In Laravel, you can group routes, name them, apply filters, and bind bind model data to them. Below is my route example for this app.   
+        </p>
+        <div class="img">
+            <img src="../../assets/php-laravel-api-photos/routes.png" alt="code">
+        </div>
+        <p>
+            Couple things to point out. The <code>Route::group</code> attribute is where I created a group with a common prefix of <code>api/v1</code>
+            This means that each endpoint will be prefixed with <code>api/v1</code>. <br> <br>
+            The <code>Route::resource</code> is my endpoint. The first parameter <code>character</code> is the endpoint and the <code>CharacterController</code>
+            is telling Laravel which controller to go to when this endpoint is hit. This leads us to our controller.
+        </p>
+    </div>
+
+    <h3 id="heading">Controller</h3>
+    <div class="controller">
+       <p>
+           Simply put, Laravels controllers are very similar to other RESTful controllers like .NetCore for example.
+           This controller enables me to separate logic behind serving the GET or POST requests. Below is one method in my <code>CharacterController</code>.
+       </p>
+       <div class="img">
+           <img src="../../assets/php-laravel-api-photos/Controller.png" alt="code" style="width: 500px;">
+       </div>
+       <p>
+           This store method is similar to a <code>create</code> method in other languages. The <code>Request</code> parameter is the body of the request
+           that will hold attributes of a Character. I continue to assign variable like <code>$name and $standard_special</code> to parts of the request 
+           and create a new <code>Character</code> with those inputs. The <code>if($character->save()</code> check is making sure the character could be created
+           and if it was successful, it returns a json response with a message, link to newly created character, and a 201 response code. 
+       </p>
+    </div>
+    
+    <h3 id="heading">Models</h3>
+    <div class="models-db">
+       <p>
+           In my controller I used a <code>Character</code> object. That was my model. Below is what my Model looks like.
+       </p>
+       <div class="img">
+           <img src="../../assets/php-laravel-api-photos/Model.png" alt="code">
+       </div>
+       <p>
+           Simple, right?? This is a simple example, but the fillable property specifies which attributes in the table should be mass-assignable.
+           This means that when a request is received it can update or create a new character given all the attributes at once. Super cool! There is also
+           a <code>$hidden</code> property that you can put secret attributes like a password or other secret. 
+       </p>
+    </div>
+
+    <h3 id="heading">Results</h3>
+    <div>
+        <p>
+            Lets take a look at this api in action!
+        </p>
+        <div class="create">
+            <div class="img">
+                <h4>Create a new Character</h4>
+                <img src="../../assets/php-laravel-api-photos/create-body.png" alt="json body" style="margin-right: 2em;">
+                <img src="../../assets/php-laravel-api-photos/create-response.png" alt="json response">
+                <p>
+                    On the left is the get request body. It holds all of the attributes of the character model. On the right is the response.
+                    As you can see, it has the message, character, and response code I specified in the controller.
+                </p>
+            </div>
+        </div>
+        <div class="get">
+            <div class="img">
+                <h4>Get All Characters</h4>
+                <img src="../../assets/php-laravel-api-photos/get-all-characters.png" alt="json response">
+                <p>
+                    This is accessing the database to get all the characters that have been created. As you can see, <code>StarFox</code>
+                    is the last character in the list meaning it was the latest character created. 
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

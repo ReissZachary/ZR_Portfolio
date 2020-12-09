@@ -7,6 +7,7 @@ import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.com
 import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
 import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
+import { BlogPostPhpLaravelApiComponent } from './blog-post-php-laravel-api/blog-post-php-laravel-api.component';
 import { BlogPostReactiveFormsComponent } from './blog-post-reactive-forms/blog-post-reactive-forms.component';
 import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.component';
 import { BlogPostSqlJoinsComponent } from './blog-post-sql-joins/blog-post-sql-joins.component';
@@ -86,6 +87,10 @@ const routes: Routes = [
   {
     path: 'xamarin-blog-post',
     component: BlogPostXamarinComponent
+  },
+  {
+    path: 'php-laravel-api',
+    component: BlogPostPhpLaravelApiComponent
   },
 ];
 
