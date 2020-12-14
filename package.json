@@ -8,7 +8,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "heroku-postbuild": "ng build --aot --prod"
+    "heroku-postbuild": "ng build --aot --prod",
+    "aws-deploy": "aws s3 sync dist/zachr-portfolio/ s3://angular-portfolio-app"
   },
   "private": true,
   "dependencies": {
