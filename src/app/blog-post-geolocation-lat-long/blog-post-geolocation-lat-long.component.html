@@ -1,0 +1,80 @@
+<div class="container">
+    <h1>Latitude and Longitude via Geolocation</h1>
+    <hr>
+    <div class="logo">
+        <img src="../../assets/lat-long-blog-photos/globe.jpg" alt="globe" style="width: 500px;">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> An Angular app that can get you location and displays your lat and long on the screen</p>
+        <p><span>Why:</span> To experiment and begin working on an app idea that will rely heavily on Geolocation</p>
+        <p><span>How:</span> Using the library @agm/core and Google Maps api</p>
+    </div>
+    <h3 id="heading">The Big Picture</h3>
+    <div class="big-pic">
+        <p>
+             This application may seem silly and simple but this is a key part of and app that I want to make.
+             To summarize my app idea, it will be a 'hacking' game where you are given intel you need to hack using your phone. 
+             You will see your location and your targets location. You are to get close enough to the location of your target without
+             being caught to hack them and get the secret information from them. The target could, in theory, be another person playing,
+             a random generated location, a stationary object, or a moving object. This is why Geolocation is crucial for this app. 
+        </p>
+    </div>
+
+    <h3 id="heading">So It Begins</h3>
+    <div class="begin">
+        <h4>AGM</h4>
+        <p>
+             After setting up my Angular app I went ahead and installed @agm/core. AGM stands for Angular Google Maps
+             and has many different tools that will allow us to get our latitude and longitude location. This is installed using the 
+             command <code>npm install @agm/core</code>
+        </p>
+
+        <h4>@NgModule Setup</h4>
+        <p>
+            After installing agm/core we need to import the AgmCoreModule in our app.module.ts file.
+            This will allow our app to utilize the agm core tools. Along with this import I provided 
+            my google maps api key to use later when I need to add a map. You can get your google map api key <a href="https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en#key">here</a>
+        </p>
+        <img src="../../assets/lat-long-blog-photos/imports.png" alt="code" style="width: 600px;">
+        
+        <h4>Create UI</h4>
+        <p>
+            I wanted to make a simple UI that when you push a button, your current latitude and longitude are displayed.
+            Below is the code that made up this UI. I am binding to <code>lat</code> and <code>long</code> in the <code>component.ts</code> file
+            The button executes a method called <code>SetCurrentLocation</code>
+        </p>
+        <img src="../../assets/lat-long-blog-photos/html.png" alt="html" style="width: 600px;">
+
+        <h4>Extend the component</h4>
+        <p>
+            Now that the UI is set up, I can link it all together by extending the component. What I did is create a few properties like <code>lat</code> and <code>long</code>
+            to hold the current values for latitude and longitude. Then in my <code>SetCurrentLocation</code> method I set them using agm tools. 
+        </p>
+        <div class="img">
+            <img src="../../assets/lat-long-blog-photos/properties.png" alt="properties">
+            <img src="../../assets/lat-long-blog-photos/set-location-code.png" alt="method">
+        </div>
+    </div>
+
+    <h3 id="heading">The Final Outcome</h3>
+    <div class="Code">
+        <p>
+            Once doing these steps I could now get my location with a click of a button! 
+        </p>
+        <div class="img">
+            <img src="../../assets/lat-long-blog-photos/before-click.png" alt="UI" style="width: 500px;">
+            <img src="../../assets/lat-long-blog-photos/after-click.png" alt="UI" style="width: 500px;">
+        </div>
+    </div>
+    <div>
+        <p>
+            If you want to see the full code, go check it out on my <a href="https://github.com/ReissZachary/Geolocation-Angular">github account here!</a>
+        </p>
+    </div>
+</div>
+
+
+
+
+

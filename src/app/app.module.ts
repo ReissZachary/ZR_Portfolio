@@ -27,6 +27,7 @@ import { MainSkillsListComponent } from './main-skills-list/main-skills-list.com
 import { BlogPostXamarinComponent } from './blog-post-xamarin/blog-post-xamarin.component';
 import { BlogPostPhpLaravelApiComponent } from './blog-post-php-laravel-api/blog-post-php-laravel-api.component';
 import { BlogPostElixirComponent } from './blog-post-elixir/blog-post-elixir.component';
+import { BlogPostGeolocationLatLongComponent } from './blog-post-geolocation-lat-long/blog-post-geolocation-lat-long.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { BlogPostElixirComponent } from './blog-post-elixir/blog-post-elixir.com
     BlogPostXamarinComponent,
     BlogPostPhpLaravelApiComponent,
     BlogPostElixirComponent,
+    BlogPostGeolocationLatLongComponent,
   ],
   imports: [
     BrowserModule,
