@@ -1,0 +1,51 @@
+<div class="container">
+    <h1>Final Geolocation App</h1>
+    <hr>
+    <div class="logo">
+        <img src="../../assets/geolocation-blog-photos/Target.png" alt="globe" style="width: 500px;">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> Finished version of geo-lat-blog-post</p>
+        <p><span>Why:</span> To include a map with current location be able to set other locations on the map</p>
+        <p><span>How:</span> Using the library @agm/core, Google Maps api, and a random generator</p>
+    </div>
+    <h3 id="heading">
+        UPDATE: My free trial of Google Maps Api ended a few days before this project so I was not able to render
+         my location on the map. However, I can display the map. You'll just have to trust me :)
+    </h3>
+    <h3 id="heading">The Application</h3>
+    <div class="big-pic" style="text-align: center;">
+        <p style="text-align: left;">
+             This application will reference <a href="geo-lat-blog-post">this project</a> which shows a more in depth coverage of code. This is
+             a simple example of what the app now looks like after completing some other tasks. Below is what the app looks like as it currently
+             stands:
+        </p>
+        <img src="../../assets/geolocation-blog-photos/app.png" alt="app" style="width: 600px;">
+    </div>
+
+    <h3 id="heading">Whats so great?</h3>
+    <div class="begin" style="text-align: center;">
+        <h4>Random location generator</h4>
+        <p style="text-align: left;">
+            Okay, its not really random...but it gets the job done! The point behind this feature is to generate locations on the
+            map that you would need to go to complete that 'mission'. What I did to do this was basically each time the "Generate Random Point"
+            button is clicked a number is randomly generated and if that number is even, it adds to the latitude and longitude, if it is odd
+            then it subtracts from the latitude and longitude. The distance between these points isn't more than just a few miles. Here is the code
+            that does this.
+        </p>
+        <img src="../../assets/geolocation-blog-photos/rand-number.png" alt="code" style="width: 600px;">
+
+        <h4>Map Markers</h4>
+        <p style="text-align: left;">
+            Another thing I added was map markers. So not only do you see yourself, but you see your target as well. This was as easy as 
+            modifying the html tag of the map component to use the markers I set up in my typescript file. That is shown below:
+        </p>
+        <img src="../../assets/geolocation-blog-photos/markers.png" alt="code" style="width: 250px;">
+    </div>
+</div>
+
+
+
+
+

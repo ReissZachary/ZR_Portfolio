@@ -5,6 +5,7 @@ import { BlogPostDjangoApiComponent } from './blog-post-django-api/blog-post-dja
 import { BlogPostDjangoPostgresComponent } from './blog-post-django-postgres/blog-post-django-postgres.component';
 import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.component';
 import { BlogPostElixirComponent } from './blog-post-elixir/blog-post-elixir.component';
+import { BlogPostGeolocationFinalComponent } from './blog-post-geolocation-final/blog-post-geolocation-final.component';
 import { BlogPostGeolocationLatLongComponent } from './blog-post-geolocation-lat-long/blog-post-geolocation-lat-long.component';
 import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
@@ -101,6 +102,10 @@ const routes: Routes = [
   {
     path: 'geo-lat-blog-post',
     component: BlogPostGeolocationLatLongComponent
+  },
+  {
+    path: 'geolocation',
+    component: BlogPostGeolocationFinalComponent
   },
 ];
 

@@ -28,6 +28,7 @@ import { BlogPostXamarinComponent } from './blog-post-xamarin/blog-post-xamarin.
 import { BlogPostPhpLaravelApiComponent } from './blog-post-php-laravel-api/blog-post-php-laravel-api.component';
 import { BlogPostElixirComponent } from './blog-post-elixir/blog-post-elixir.component';
 import { BlogPostGeolocationLatLongComponent } from './blog-post-geolocation-lat-long/blog-post-geolocation-lat-long.component';
+import { BlogPostGeolocationFinalComponent } from './blog-post-geolocation-final/blog-post-geolocation-final.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { BlogPostGeolocationLatLongComponent } from './blog-post-geolocation-lat
     BlogPostPhpLaravelApiComponent,
     BlogPostElixirComponent,
     BlogPostGeolocationLatLongComponent,
+    BlogPostGeolocationFinalComponent,
   ],
   imports: [
     BrowserModule,
