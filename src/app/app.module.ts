@@ -29,6 +29,7 @@ import { BlogPostPhpLaravelApiComponent } from './blog-post-php-laravel-api/blog
 import { BlogPostElixirComponent } from './blog-post-elixir/blog-post-elixir.component';
 import { BlogPostGeolocationLatLongComponent } from './blog-post-geolocation-lat-long/blog-post-geolocation-lat-long.component';
 import { BlogPostGeolocationFinalComponent } from './blog-post-geolocation-final/blog-post-geolocation-final.component';
+import { BashScriptBlogPostComponent } from './blog-post-bash-script/bash-script-blog-post.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { BlogPostGeolocationFinalComponent } from './blog-post-geolocation-final
     BlogPostElixirComponent,
     BlogPostGeolocationLatLongComponent,
     BlogPostGeolocationFinalComponent,
+    BashScriptBlogPostComponent,
   ],
   imports: [
     BrowserModule,

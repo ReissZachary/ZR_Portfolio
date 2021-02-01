@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BashScriptBlogPostComponent } from './blog-post-bash-script/bash-script-blog-post.component';
 import { BlogPostDbOrganizationComponent } from './blog-post-db-organization/blog-post-db-organization.component';
 import { BlogPostDjangoApiComponent } from './blog-post-django-api/blog-post-django-api.component';
 import { BlogPostDjangoPostgresComponent } from './blog-post-django-postgres/blog-post-django-postgres.component';
@@ -106,6 +107,10 @@ const routes: Routes = [
   {
     path: 'geolocation',
     component: BlogPostGeolocationFinalComponent
+  },
+  {
+    path: 'bash-script-blog-post',
+    component: BashScriptBlogPostComponent
   },
 ];
 
