@@ -14,17 +14,17 @@
     <div class="reactive-forms">
         <p>
             Angular has two different types of forms, Template Driven Forms and Reactive Forms.
-            On the outside these two different form types may seem similar but underneath they are fairly different.            
+            On the outside these two form types may seem similar but underneath they are fairly different.            
        
             I have recently been looking at cruises to go on after I graduate. I have visited many different sites, one of which I saw a cool function
-            that was practical. I wanted to to and implement it myself using reactive forms. <br>
+            that was practical. I wanted to create and implement it myself using reactive forms. <br>
             
-            <br> What I wanted to recreate was when the potential customer inputs the number of people travelling, it generates n number of forms for <br>
+            <br> What I wanted to create was something that responds to the user instantly. For example, when a potential customer inputs the number of people travelling, it generates that number of forms for <br>
             each person to fill out. These forms contain things like name, email, birthday, etc. This led me to where this app is now. Still a work in progress! 
             Working with reactive forms have made me aware of some key benefits of choosing reactive over template. They are listed below:
         </p>
         <ul>
-            <li>You can easily test validation logic by enstantiating the class, giving it some field values and asserting those are correct</li>
+            <li>You can easily test validation logic by instantiating the class, giving it some field values and asserting those are correct</li>
             <li>Even though you can do the same things with either type of form, reactive forms seem to make the complex operations not so complex</li>
             <li>Seems to fit the need for complex inter-field business validations</li>
         </ul>
@@ -60,7 +60,7 @@
         <p>
             I also created a onSubmit(), onReset(), and onClear() methods. The onSubmit() method simply validates the form to makes sure
             there are no errors, then, if no errors, "submits" them by converting them to json and displaying that to the user. <br> <br>
-            The onReset() method simply resets the form to its inital state removing any values previously input. And removing all tickets completely <br> <br>
+            The onReset() method simply resets the form to its initial state removing any values previously input. And removing all tickets completely <br> <br>
             The onClear() method simply clears the form removing and input and any validation messages.
         </p>
         <img src="../../assets/reactive-forms-blog-photos/submitResetClear.png" alt="code">
