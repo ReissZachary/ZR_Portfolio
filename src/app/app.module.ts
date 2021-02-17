@@ -30,6 +30,9 @@ import { BlogPostElixirComponent } from './blog-post-elixir/blog-post-elixir.com
 import { BlogPostGeolocationLatLongComponent } from './blog-post-geolocation-lat-long/blog-post-geolocation-lat-long.component';
 import { BlogPostGeolocationFinalComponent } from './blog-post-geolocation-final/blog-post-geolocation-final.component';
 import { BashScriptBlogPostComponent } from './blog-post-bash-script/bash-script-blog-post.component';
+import { SudokuSolverBlogPostComponent } from './blog-post-sudoku-solver/sudoku-solver-blog-post.component';
+import { BlogPostPowershellScriptComponent } from './blog-post-powershell-script/blog-post-powershell-script.component';
+import { BlogPostOpenSourceComponent } from './blog-post-open-source/blog-post-open-source.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +61,9 @@ import { BashScriptBlogPostComponent } from './blog-post-bash-script/bash-script
     BlogPostGeolocationLatLongComponent,
     BlogPostGeolocationFinalComponent,
     BashScriptBlogPostComponent,
+    SudokuSolverBlogPostComponent,
+    BlogPostPowershellScriptComponent,
+    BlogPostOpenSourceComponent,
   ],
   imports: [
     BrowserModule,

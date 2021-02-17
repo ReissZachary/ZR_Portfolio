@@ -11,10 +11,13 @@ import { BlogPostGeolocationLatLongComponent } from './blog-post-geolocation-lat
 import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
 import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
+import { BlogPostOpenSourceComponent } from './blog-post-open-source/blog-post-open-source.component';
 import { BlogPostPhpLaravelApiComponent } from './blog-post-php-laravel-api/blog-post-php-laravel-api.component';
+import { BlogPostPowershellScriptComponent } from './blog-post-powershell-script/blog-post-powershell-script.component';
 import { BlogPostReactiveFormsComponent } from './blog-post-reactive-forms/blog-post-reactive-forms.component';
 import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.component';
 import { BlogPostSqlJoinsComponent } from './blog-post-sql-joins/blog-post-sql-joins.component';
+import { SudokuSolverBlogPostComponent } from './blog-post-sudoku-solver/sudoku-solver-blog-post.component';
 import { BlogPostTddComponent } from './blog-post-tdd/blog-post-tdd.component';
 import { BlogPostTinkerjemApiComponent } from './blog-post-tinkerjem-api/blog-post-tinkerjem-api.component';
 import { BlogPostXamarinComponent } from './blog-post-xamarin/blog-post-xamarin.component';
@@ -111,6 +114,18 @@ const routes: Routes = [
   {
     path: 'bash-script-blog-post',
     component: BashScriptBlogPostComponent
+  },
+  {
+    path: 'sudoku-solver-blog-post',
+    component: SudokuSolverBlogPostComponent
+  },  
+  {
+    path: 'scripting-madness-blog-post',
+    component: BlogPostPowershellScriptComponent
+  },  
+  {
+    path: 'open-source-blog-post',
+    component: BlogPostOpenSourceComponent
   },
 ];
 
