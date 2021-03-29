@@ -33,6 +33,7 @@ import { BashScriptBlogPostComponent } from './blog-post-bash-script/bash-script
 import { SudokuSolverBlogPostComponent } from './blog-post-sudoku-solver/sudoku-solver-blog-post.component';
 import { BlogPostPowershellScriptComponent } from './blog-post-powershell-script/blog-post-powershell-script.component';
 import { BlogPostOpenSourceComponent } from './blog-post-open-source/blog-post-open-source.component';
+import { BlogPostMetricMonitorComponent } from './blog-post-metric-monitor/blog-post-metric-monitor.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { BlogPostOpenSourceComponent } from './blog-post-open-source/blog-post-o
     SudokuSolverBlogPostComponent,
     BlogPostPowershellScriptComponent,
     BlogPostOpenSourceComponent,
+    BlogPostMetricMonitorComponent,
   ],
   imports: [
     BrowserModule,

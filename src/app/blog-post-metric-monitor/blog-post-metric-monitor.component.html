@@ -1,0 +1,124 @@
+<div class="container">
+    <h1>Metric Monitoring</h1>
+    <hr>
+    <div class="logo">
+        <img src="../../assets/metric-monitor-blog-photos/pexels-lorenzo-241544.jpg" alt="graph" style="width: 500px;">
+    </div>
+    <h3 id="heading">TL;DR</h3>
+    <div class="tldr">
+        <p><span>What:</span> An application that integrates with Prometheus and Grafana to facilitate monitoring metrics that run external apps</p>
+        <p><span>Why:</span> To facilitate monitoring metrics that run external apps</p>
+        <p><span>How:</span> Using Angular, .NET, SQL, Prometheus, and Grafana</p>
+    </div>
+    <h3 id="heading">Introduction</h3>
+    <div class="intro">
+        <p>
+            Before we jump in, a quick note to the reader. In May of 2020 I started an internship with Micron Technology Inc. as a 
+            Full Stack Software Engineer. I was tasked with coming up with a monitoring system that could gather metrics from external
+            apps to ensure things are running smoothly. My team calls these metrics ETL jobs. Since some of the information is semi-confidential
+            I have hidden/blurred some photos and text. This blog post is the solution I came up with to solve this problem.<br>
+            Below are common words defined:
+        </p>
+        <p>
+            <span>ETL</span> - This stands for Extracting data from source, Transforming it into another format or structure
+            and Loading it into an area within our domain. <br>
+
+            <span>Prometheus</span> - <a href="https://prometheus.io/docs/introduction/overview/">Prometheus</a> is an open-source systems
+            monitoring and alerting toolkit originally built at SoundCloud. This is doing the storing and alerting of my monitors. <br>
+
+            <span id="gauge">Gauge</span> - A <a href="https://prometheus.io/docs/concepts/metric_types/">Gauge</a> is a Prometheus metric that
+            represents a single numerical value that can arbitrarily go up and down. I am using gauges to keep track of metric values
+            in this application. <br>
+
+            <span>Grafana</span> - <a href="https://grafana.com/">Grafana</a> is a multi-platform open source analytics and interactive visualization
+            web application. It provides charts, graphs, and alerts for the web when connected to supported data sources. <br>
+
+            <span>Monitor</span> - A monitor is an object that holds properties like name(ETL job), database connection, query, and
+            upper limit. By knowing the connection and the query we can execute it and get the metric value back.
+
+            <span>ServiceNow</span> - ServiceNow is what we use for our ticketing system. Tickets will be created for ETL jobs that our at
+            or above their thresholds.
+        </p>
+    </div>
+
+    <h3 id="heading">Architecture</h3>
+    <div class="Architecture">
+        <div class="img">
+            <img src="../../assets/metric-monitor-blog-photos/Architecture.jpg" alt="">
+        </div>
+    </div>
+
+    <h3 id="heading">Code Samples</h3>
+    <div class="code">
+        <p>
+            Now that there is a basic understanding of the problem and solution lets look at some cool code samples!
+        </p>
+        <h4>Prometheus</h4>
+        <p>
+            Prometheus is really easy to setup. After adding the Prometheus Nuget Package, all I had to do was add the highlighted lines to my Startup.cs file
+        </p>
+        <div class="img">
+            <img src="../../assets/metric-monitor-blog-photos/Startup.jpg" alt="startup" style="width: 300px;">
+        </div>
+        <p>
+            What <span>app.UseHttpMetrics()</span> is doing is allowing Prometheus to start gather the default metrics for my API.
+            Now All I needed to do was tell Prometheus which metrics to scrape from my Metrics API
+        </p>
+        <div class="img">
+            <img src="../../assets/metric-monitor-blog-photos/Gague.jpg" alt="startup" style="width: 1000px;">
+            <img src="../../assets/metric-monitor-blog-photos/UpdateMetrics.jpg" alt="startup" style="width: 900px;">
+        </div>
+        <p>
+            What these two code samples are doing is setting up a gauge with labels like the name, connection
+            and severity level of any given monitor. Also, the <span>UpdateMetrics()</span> method is gathering all monitors and 
+            and created gauges for them with appropriate labels.
+        </p>
+
+        <h4>Business Logic</h4>
+        <div class="img">
+            <img src="../../assets/metric-monitor-blog-photos/MetricService.jpg" alt="" style="width: 600px;">
+        </div>
+        <p>
+            The above code is is the logic behind getting individual metrics from any given monitor. For each monitor, I execute its
+            query on the provided connection and return that value making sure it follows expectations like being of type double. This
+            is all done concurrently to help reduce cost!
+        </p>
+        <div class="img">
+            <img src="../../assets/metric-monitor-blog-photos/NormValCode.jpg" alt="" style="width: 700px;">
+        </div>
+        <p>
+            This simply transforms the return metric value into a normalized value. What this means is that the new metric value
+            is a percentage based on the monitors upper limit. This made grouping firing alerts a lot more simple in the end.
+        </p>
+    </div>
+
+    <h3 id="heading">UI Demo</h3>
+    <div class="ui">
+        <p>
+            Lets wrap things up with some photos of the UI
+        </p>
+        <div class="img">
+            <img src="../../assets/metric-monitor-blog-photos/UIMonitors.jpg" alt="">
+            <p>(Interface to view and modify monitors)</p>
+            <br><br>
+            <img src="../../assets/metric-monitor-blog-photos/UIMetricForm.jpg" alt="" style="width: 800px;">
+            <p>(Form to create new monitor with validation)</p>
+            <br><br>
+            <img src="../../assets/metric-monitor-blog-photos/UIConnection.jpg" alt="">
+            <p>(Same app different view of connections that a monitor can have)</p>
+            <br><br>
+            <img src="../../assets/metric-monitor-blog-photos/UIPrometheus.jpg" alt="">
+            <p>(Main page of prometheus. Allowed to query API and return list of all metrics with their values)</p>
+            <br><br>
+            <img src="../../assets/metric-monitor-blog-photos/UIGrafana.jpg" alt="">
+            <p>(Grana allows the team to visualize our data/metrics. I created this dashboard that holds our high priority jobs)</p>
+            <br><br>            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

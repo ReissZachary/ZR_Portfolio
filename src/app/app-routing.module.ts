@@ -10,6 +10,7 @@ import { BlogPostGeolocationFinalComponent } from './blog-post-geolocation-final
 import { BlogPostGeolocationLatLongComponent } from './blog-post-geolocation-lat-long/blog-post-geolocation-lat-long.component';
 import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
+import { BlogPostMetricMonitorComponent } from './blog-post-metric-monitor/blog-post-metric-monitor.component';
 import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
 import { BlogPostOpenSourceComponent } from './blog-post-open-source/blog-post-open-source.component';
 import { BlogPostPhpLaravelApiComponent } from './blog-post-php-laravel-api/blog-post-php-laravel-api.component';
@@ -126,6 +127,10 @@ const routes: Routes = [
   {
     path: 'open-source-blog-post',
     component: BlogPostOpenSourceComponent
+  }, 
+  {
+    path: 'metric-monitor-blog-post',
+    component: BlogPostMetricMonitorComponent
   },
 ];
 
