@@ -2,59 +2,46 @@
     <h1>Metric Monitoring</h1>
     <hr>
     <div class="logo">
-        <img src="../../assets/metric-monitor-blog-photos/pexels-lorenzo-241544.jpg" alt="graph" style="width: 500px;">
+        <img src="../../assets/python-dp-blog-post/kruskal-algorithm.png" alt="graph" style="width: 500px;">
     </div>
     <h3 id="heading">TL;DR</h3>
     <div class="tldr">
-        <p><span>What:</span> An python application that utilizes pulp to solve complex optimization problems</p>
-        <p><span>Why:</span> Use a tool to easily generate constraints, objective, and variables for any given optimization problem</p>
-        <p><span>How:</span> Using Python, PulP, and Visual Studio Code</p>
+        <p><span>What:</span> Complex problem solved using Dynamic Programming</p>
+        <p><span>Why:</span> A way to quickly solve problems that would normally take a long time to solve recursively</p>
+        <p><span>How:</span> Using Python and Visual Studio Code</p>
     </div>
-    <h3 id="heading">Introduction</h3>
+    <h3 id="heading">Dynamic Programming</h3>
     <div class="intro">
-        
+        <p>
+            Wherever we see a recursive solution that has repeated calls for same inputs, we can optimize it using Dynamic Programming. The idea is to simply store the results of subproblems, so that we do not have to re-compute them when needed later. This simple optimization reduces time complexities from exponential to polynomial. For example, if we write simple recursive solution for Fibonacci Numbers, we get exponential time complexity and if we optimize it by storing solutions of subproblems, time complexity reduces to linear.
+        </p>
     </div>
 
-    <h3 id="heading">Code Samples</h3>
+    <h3 id="heading">The problem</h3>
     <div class="code">
         <p>
-            Now that there is a basic understanding of the problem and solution lets look at some cool code samples!
-        </p>
-        <h4>Prometheus</h4>
-        <p>
-            Prometheus is really easy to setup. After adding the Prometheus Nuget Package, all I had to do was add the highlighted lines to my Startup.cs file
-        </p>
-        
-        <p>
-            What <span>app.UseHttpMetrics()</span> is doing is allowing Prometheus to start gather the default metrics for my API.
-            Now All I needed to do was tell Prometheus which metrics to scrape from my Metrics API
-        </p>
-        <p>
-            What these two code samples are doing is setting up a gauge with labels like the name, connection
-            and severity level of any given monitor. Also, the <span>UpdateMetrics()</span> method is gathering all monitors and 
-            and created gauges for them with appropriate labels.
-        </p>
-
-        <h4>Business Logic</h4>
-        <p>
-            The above code is is the logic behind getting individual metrics from any given monitor. For each monitor, I execute its
-            query on the provided connection and return that value making sure it follows expectations like being of type double. This
-            is all done concurrently to help reduce cost!
-        </p>
-        <p>
-            This simply transforms the return metric value into a normalized value. What this means is that the new metric value
-            is a percentage based on the monitors upper limit. This made grouping firing alerts a lot more simple in the end.
+            You are driving a bus along a highway, full of rowdy, hyper, thirsty students
+            and a soda fountain machine. Each minute that a student is on your bus,
+            that student drinks one ounce of soda. Your goal is to drop the students
+            off quickly, so that the total amount of soda consumed by all students is as
+            small as possible. <br> <br>
+            You know how many students will get off of the bus at each exit. Your
+            bus begins somewhere along the highway (probably not at either end)
+            and moves at a constant speed of 37.4 miles per hour. You must drive the
+            bus along the highway; however, you may drive forward to one exit then
+            backward to an exit in the opposite direction, switching as often as you like.
+            (You can stop the bus, drop off students, and turn around instantaneously.) <br><br>
+            Describe an efficient algorithm to drop the students off so that they drink
+            as little soda as possible. Your input consists of the bus route (a list of the
+            exits, together with the travel time between successive exits), the number of
+            students you will drop off at each exit, and the current location of your bus
+            (which you may assume is an exit)            
         </p>
     </div>
 
-    <h3 id="heading">UI Demo</h3>
+    <h3 id="heading">My Solution</h3>
     <div class="ui">
-        <p>
-            Lets wrap things up with some photos of the UI
-        </p>
-        <div class="img">
-            
-        </div>
+        <img src="../../assets/pulp-python-blog-post/dp.png" alt="">
     </div>
 </div>
 
