@@ -5,16 +5,20 @@ import { BlogPostDbOrganizationComponent } from './blog-post-db-organization/blo
 import { BlogPostDjangoApiComponent } from './blog-post-django-api/blog-post-django-api.component';
 import { BlogPostDjangoPostgresComponent } from './blog-post-django-postgres/blog-post-django-postgres.component';
 import { BlogPostDockerComponent } from './blog-post-docker/blog-post-docker.component';
+import { BlogPostDynamicProgrammingComponent } from './blog-post-dynamic-programming/blog-post-dynamic-programming.component';
 import { BlogPostElixirComponent } from './blog-post-elixir/blog-post-elixir.component';
+import { BlogPostFirstProgramComponent } from './blog-post-first-program/blog-post-first-program.component';
 import { BlogPostGeolocationFinalComponent } from './blog-post-geolocation-final/blog-post-geolocation-final.component';
 import { BlogPostGeolocationLatLongComponent } from './blog-post-geolocation-lat-long/blog-post-geolocation-lat-long.component';
 import { BlogPostGitComponent } from './blog-post-git/blog-post-git.component';
+import { BlogPostGrafanaOpenSourceComponent } from './blog-post-grafana-open-source/blog-post-grafana-open-source.component';
 import { BlogPostManagerComponent } from './blog-post-manager/blog-post-manager.component';
 import { BlogPostMetricMonitorComponent } from './blog-post-metric-monitor/blog-post-metric-monitor.component';
 import { BlogPostNgRoutingComponent } from './blog-post-ng-routing/blog-post-ng-routing.component';
 import { BlogPostOpenSourceComponent } from './blog-post-open-source/blog-post-open-source.component';
 import { BlogPostPhpLaravelApiComponent } from './blog-post-php-laravel-api/blog-post-php-laravel-api.component';
 import { BlogPostPowershellScriptComponent } from './blog-post-powershell-script/blog-post-powershell-script.component';
+import { BlogPostPulpPythonComponent } from './blog-post-pulp-python/blog-post-pulp-python.component';
 import { BlogPostReactiveFormsComponent } from './blog-post-reactive-forms/blog-post-reactive-forms.component';
 import { BlogPostSipitComponent } from './blog-post-sipit/blog-post-sipit.component';
 import { BlogPostSqlJoinsComponent } from './blog-post-sql-joins/blog-post-sql-joins.component';
@@ -131,6 +135,22 @@ const routes: Routes = [
   {
     path: 'metric-monitor-blog-post',
     component: BlogPostMetricMonitorComponent
+  },
+  {
+    path: 'first-program-blog-post',
+    component: BlogPostFirstProgramComponent
+  },
+  {
+    path: 'pulp-python-blog-post',
+    component: BlogPostPulpPythonComponent
+  },  
+  {
+    path: 'grafana-open-source-blog-post',
+    component: BlogPostGrafanaOpenSourceComponent
+  },  
+  {
+    path: 'python-dp-blog-post',
+    component: BlogPostDynamicProgrammingComponent
   },
 ];
 

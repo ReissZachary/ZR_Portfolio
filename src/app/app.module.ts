@@ -34,6 +34,10 @@ import { SudokuSolverBlogPostComponent } from './blog-post-sudoku-solver/sudoku-
 import { BlogPostPowershellScriptComponent } from './blog-post-powershell-script/blog-post-powershell-script.component';
 import { BlogPostOpenSourceComponent } from './blog-post-open-source/blog-post-open-source.component';
 import { BlogPostMetricMonitorComponent } from './blog-post-metric-monitor/blog-post-metric-monitor.component';
+import { BlogPostFirstProgramComponent } from './blog-post-first-program/blog-post-first-program.component';
+import { BlogPostPulpPythonComponent } from './blog-post-pulp-python/blog-post-pulp-python.component';
+import { BlogPostGrafanaOpenSourceComponent } from './blog-post-grafana-open-source/blog-post-grafana-open-source.component';
+import { BlogPostDynamicProgrammingComponent } from './blog-post-dynamic-programming/blog-post-dynamic-programming.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +70,10 @@ import { BlogPostMetricMonitorComponent } from './blog-post-metric-monitor/blog-
     BlogPostPowershellScriptComponent,
     BlogPostOpenSourceComponent,
     BlogPostMetricMonitorComponent,
+    BlogPostFirstProgramComponent,
+    BlogPostPulpPythonComponent,
+    BlogPostGrafanaOpenSourceComponent,
+    BlogPostDynamicProgrammingComponent,
   ],
   imports: [
     BrowserModule,

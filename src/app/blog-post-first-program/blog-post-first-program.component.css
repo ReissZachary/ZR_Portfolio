@@ -1,0 +1,45 @@
+h1{
+    font-size: 5em;
+    font-weight: bolder;
+}
+h3{
+    font-weight: bolder;
+}
+h2{
+    font-weight: bolder;
+    text-decoration: underline;
+}
+.tutorial{
+    text-align: left;
+}
+a{
+    color: gray;
+}
+a:hover{
+    text-decoration: none;
+    color: #85cf2a;
+}
+.container{
+    text-align: center;
+    margin-right: 17em;
+    margin-left: 17em;
+    margin-bottom: 7em;
+}
+hr{
+    border-color: #2e2e2e;
+    background-color:  #2e2e2e;
+    color: #2e2e2e;
+}
+img{
+    width: 600px;
+}
+.contents{
+    margin-left: 1em;
+}
+span{
+    font-style: italic;
+    font-weight: bold;
+}
+ul, ol{
+    margin-left: .5em;
+}

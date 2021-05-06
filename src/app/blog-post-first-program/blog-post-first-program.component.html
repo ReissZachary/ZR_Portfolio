@@ -1,0 +1,140 @@
+<div class="container">
+    <h1 id="top">Making Your First C# Program</h1>
+    <div class="intro">
+        <p>
+            This article will teach you how to write your first program using the C#
+            language. <br><br>
+
+            By the end of this article, you will have created a program that asks for your name, greets you with the name you give it, asks
+                for your birth year, then calculates your age.
+        </p>        
+    </div>
+    <hr>
+    <div class="tutorial">
+        <div class="prereq">
+            <h3>Prerequisites</h3>
+            <div class="contents">
+                <ul style="margin: .5em;">
+                    <li>Have installed <a href="https://visualstudio.microsoft.com/downloads/">Visual Studio 2019 - Community</a> on your computer</li>
+                    <li>Have installed the <a href="https://docs.microsoft.com/en-us/dotnet/core/introduction">.NET SDK</a> on your computer</li>
+                </ul>
+            </div>
+        </div>
+        <div class="step1">
+            <h2 id="creation">Step 1: Creating A New Project</h2>
+            <div class="contents">
+                <p>
+                    Open Visual Studio and click "Create a new project"
+                </p>
+                <img src="../../assets/first-program-blog-post/CreateNewProject.png" alt="">
+                <p>
+                    Then:
+                </p>
+                <ol>
+                    <li>In the search bar towards the top of the window type in <span>Console</span></li>
+                    <li>Choose the <span>Console App (.NET Core)</span> option</li>
+                    <li>Then click <span>Next</span></li>
+                </ol>
+                <img src="../../assets/first-program-blog-post/ChooseConsoleApp.png" alt="">
+                <p>
+                    Next:
+                </p>
+                <ol>
+                    <li>in the <span>Project Name</span> box, enter a name for your project. I named mine
+                        <span>MyFirstProgram</span> (no spaces)</li>
+                    <li>Then click <span>Create</span></li>
+                </ol>
+                <img src="../../assets/first-program-blog-post/NameProject.png" alt="">
+                <p>
+                    Now you should see code on your screen that looks like this:
+                </p>
+                <img src="../../assets/first-program-blog-post/StarterCode.png" alt="">
+                <p>
+                    Let's break down some important parts of this picture (by number) before diving in.
+                </p>
+                <ol>
+                    <li>These are <span>Line Numbers</span>. They are helpful in referencing different parts of the code.</li>
+                    <li>This is your <span>Namespace</span>. Simply put, this is the name of your project.</li>
+                    <li>This is the <span>Main Method</span>. This is where you will be writing all your code.</li>
+                    <li>Lastly, this <span>Play</span> button is how you will run your program to see if it works.</li>
+                </ol>
+            </div>
+        </div>
+        <div class="step2">
+            <h2>Step 2: Writing Code</h2>
+            <div class="contents">
+               <p>
+                   Let's get to the fun part! <br><br>
+
+                   On line 9, inside the quotation marks, replace <span>Hello World!</span> with the following:
+               </p>
+               <br>
+               <input style="width: 300px; background-color: black; color: white;" type="text" value="Hello, welcome to your first application." class="field left" readonly>
+               <!-- <button style="margin-left: 1em;" ngxClipboard [cbContent]="'Hello, welcome to your first application.'">Copy!</button> -->
+               <br>
+               <p>Your <span>Main Method</span> should look something like this:</p>
+               <img src="../../assets/first-program-blog-post/main1.png" alt="">
+               <p>At the end of line 9, hit <span>Enter</span> then copy and paste this code on line 10</p>
+               <input id="getname" style="width: 375px; background-color: black; color: white;" type="text" value='Console.Write("Lets begin by entering your name:");' class="field left" readonly>
+               <!-- <button style="margin-left: 1em;" ngxClipboard [cbContent]="">Copy!</button> -->
+
+               <p>
+                   Next, hit <span>Enter</span> twice. Copy and paste this line of code to line 12 of your program
+               </p>
+               <input id="greetings" style="width: 375px; background-color: black; color: white;" type="text" value='string name = Console.ReadLine();' class="field left" readonly>
+
+               <p>
+                   At this point, your <span>Program</span> should look like this:
+               </p>
+               <img src="../../assets/first-program-blog-post/main2.png" alt="">
+
+               <p>
+                   Before we move on, lets define some key parts of the program so far.
+               </p>
+               <ol>
+                   <li><span>Console.Write()</span> and <span>Console.WriteLine()</span> are telling your program to write something to the screen. </li>
+                   <li><span>string name</span> is creating a variable named <span>name</span>. <span>string</span> just is specifying that this variable contains letters. (You will use something different for numbers)</li>
+                   <li><span>Console.ReadLine()</span> is telling your program to take input from the keyboard. This is how the program will get your name!</li>
+               </ol>
+               <p>
+                   With this, you're ready to finish up your program!
+
+                   Lastly, hit <span>Enter</span> twice then copy and paste the following code starting on line 14.
+               </p>
+               <textarea id="birth" cols='75' rows='6' readonly style="background-color: black; color: white;">Console.Write($"Hello, {name}! Lets calculate your age by entering your birth year: ");&#13;&#10;&#13;&#10;int age = int.Parse(Console.ReadLine());&#13;&#10;&#13;&#10;Console.WriteLine($"{name}, by the end of the year, you will be {2021-age} years old!");</textarea>
+               <p>
+                   Notice how on line 16 you are using <span>int</span> instead of <span>string?</span>
+                   That is because <span>age</span> is a number(integer) instead of a word(string). <br><br>
+
+                   Now that we have finished coding, your program should look similar to this
+               </p>
+               <img src="../../assets/first-program-blog-post/main3.png" alt="">
+            </div>
+        </div>
+        <div class="step3">
+            <h2>Step 3: Run Your Program</h2>
+            <div class="contents">
+                <p>
+                    Remember that <span>Play Button</span> we mentioned earlier located at the top of the window on the toolbar?                    
+                </p>
+                <img src="../../assets/first-program-blog-post/run.png" alt="">
+                <p>
+                    Well, it is finally time to push it! Go ahead, give it a good ol push. <br><br>
+
+                    Doing this will <span>Run</span> or <span>Execute</span> the code you just wrote!
+                    You should see a small window pop up on your screen. Don't worry, this is good! <br><br>
+                    
+                    This is called the <span>Console</span> (sounds familiar right?). At the top of this window you should
+                    see the text, "Hello, welcome to your first application" followed by "Lets begin by entering your name:"
+                </p>
+                <img src="../../assets/first-program-blog-post/Console.png" alt="">
+                <p>
+                    Go ahead! Type in your name and hit enter! <br><br>
+
+                    There you have it, you have successfully created your first program using the C# language!
+                </p>
+            </div>
+        </div>
+    </div>
+    <hr>
+</div>
